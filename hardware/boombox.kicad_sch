@@ -6129,6 +6129,7 @@
 	)
 	(label "BUTTONS4"
 		(at 123.19 158.75 90)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6139,6 +6140,7 @@
 	)
 	(label "BUTTONS2"
 		(at 102.87 158.75 90)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6171,6 +6173,7 @@
 	)
 	(label "BUTTONS3"
 		(at 113.03 158.75 90)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
