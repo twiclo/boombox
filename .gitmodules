@@ -1,0 +1,6 @@
+[submodule "pico-sdk"]
+	path = pico-sdk
+	url = https://github.com/raspberrypi/pico-sdk
+[submodule "hardware/KiCad-RP-Pico"]
+	path = hardware/KiCad-RP-Pico
+	url = https://github.com/ncarandini/KiCad-RP-Pico.git
