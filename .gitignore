@@ -2,3 +2,5 @@ build
 hardware/*backup*
 hardware/*.bak
 hardware/fp-info-cache
+*.bak
+*.lck

@@ -216,7 +216,9 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "lib_symbol_issues|1168400|304800|b2068614-2552-47cf-8117-59836fa92b86|00000000-0000-0000-0000-000000000000|||"
+    ],
     "meta": {
       "version": 0
     },
@@ -586,6 +588,10 @@
     [
       "aa6729ee-32f9-4f43-8219-06c1c5d6987b",
       "Power"
+    ],
+    [
+      "1df97fe1-ae1c-48c8-898d-06b71dd703d8",
+      "Audio"
     ]
   ],
   "text_variables": {}
