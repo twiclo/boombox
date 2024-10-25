@@ -4,6 +4,9 @@
 	(generator_version "8.0")
 	(uuid "947839cd-c3fd-4edc-874b-58f50b880ae8")
 	(paper "A4")
+	(title_block
+		(title "Boombuddy")
+	)
 	(lib_symbols
 		(symbol "Connector:Micro_SD_Card_Det1"
 			(exclude_from_sim no)
