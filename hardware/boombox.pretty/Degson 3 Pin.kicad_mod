@@ -68,8 +68,8 @@
 	)
 	(attr through_hole)
 	(fp_rect
-		(start -5 -2.5)
-		(end 5 2.5)
+		(start -7 -2.5)
+		(end 8 2.5)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -79,8 +79,8 @@
 		(uuid "6d2e44db-0ae1-4662-b591-c2f39fe171ad")
 	)
 	(fp_rect
-		(start -5.5 -3)
-		(end 5.5 3)
+		(start -8 -3)
+		(end 9 3)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -102,7 +102,7 @@
 		)
 	)
 	(pad "1" thru_hole circle
-		(at -2 0)
+		(at -5 0)
 		(size 1.524 1.524)
 		(drill 0.762)
 		(layers "*.Cu" "*.Mask")
@@ -118,7 +118,7 @@
 		(uuid "6ee53fc0-0a77-44f2-9af1-4e816ebf3ff2")
 	)
 	(pad "3" thru_hole circle
-		(at 2 0)
+		(at 5 0)
 		(size 1.524 1.524)
 		(drill 0.762)
 		(layers "*.Cu" "*.Mask")

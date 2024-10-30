@@ -452,6 +452,171 @@
 				)
 			)
 		)
+		(symbol "Device:D_Dual_CommonCathode_AAK_Split"
+			(pin_names
+				(offset 0.762) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Dual_CommonCathode_AAK_Split"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -2.54 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at -2.54 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Dual diode, common cathode on pin 1"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "D_Dual_CommonCathode_AAK_Split_0_0"
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Dual_CommonCathode_AAK_Split_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy 1.27 0) (xy -1.27 -1.27) (xy -1.27 1.27) (xy -1.27 1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "D_Dual_CommonCathode_AAK_Split_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "D_Dual_CommonCathode_AAK_Split_2_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:D_Schottky"
 			(pin_numbers hide)
 			(pin_names
@@ -580,171 +745,6 @@
 				(pin passive line
 					(at 3.81 0 180)
 					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "Device:D_Small"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0.254) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at -1.27 2.032 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "D_Small"
-				(at -3.81 -2.032 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Diode, small symbol"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Device" "D"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "D_Small_0_1"
-				(polyline
-					(pts
-						(xy -0.762 -1.016) (xy -0.762 1.016)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.762 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.016) (xy -0.762 0) (xy 0.762 1.016) (xy 0.762 -1.016)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "D_Small_1_1"
-				(pin passive line
-					(at -2.54 0 0)
-					(length 1.778)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 0 180)
-					(length 1.778)
 					(name "A"
 						(effects
 							(font
@@ -1682,12 +1682,6 @@
 		(uuid "0e0c752f-eae8-48d5-81c9-53da28c55231")
 	)
 	(junction
-		(at 156.21 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "170a104a-b855-455f-8c15-92e3c8d5d057")
-	)
-	(junction
 		(at 208.28 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1700,16 +1694,16 @@
 		(uuid "1b8d6671-a26f-47f3-888e-7beb6b310d6d")
 	)
 	(junction
+		(at 156.21 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "288be789-e9b5-465f-8549-18d3c94a7366")
+	)
+	(junction
 		(at 166.37 29.21)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2c92f032-2e40-4119-9679-8a4911e03e98")
-	)
-	(junction
-		(at 64.77 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "48f90500-97ab-4e93-881f-a0abf843c073")
 	)
 	(junction
 		(at 73.66 132.08)
@@ -1736,16 +1730,22 @@
 		(uuid "58430b09-c478-4064-ac8f-40cbccd729f6")
 	)
 	(junction
+		(at 148.59 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "63d4fdbf-34de-42be-8de5-21930f62627d")
+	)
+	(junction
+		(at 64.77 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "63e45bf2-c752-43c1-8b0d-5a438d990550")
+	)
+	(junction
 		(at 208.28 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6a7079ad-76bd-4311-b393-2f7830847a5e")
-	)
-	(junction
-		(at 152.4 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "73ea55e9-30a8-46fc-8852-407d32bd710f")
 	)
 	(junction
 		(at 170.18 69.85)
@@ -1754,10 +1754,28 @@
 		(uuid "85453e7b-d9d4-4836-896a-38cc9dac03bd")
 	)
 	(junction
+		(at 160.02 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "89553fc7-a87a-4750-a236-e3c801f9655b")
+	)
+	(junction
 		(at 76.2 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "899f3aad-e130-4495-bdb7-b83ea69d79d0")
+	)
+	(junction
+		(at 53.34 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8ad3a487-c58d-4f40-99a0-6ea4415bf27e")
+	)
+	(junction
+		(at 68.58 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8c4ab152-56ae-4bef-93f9-7498d8068a31")
 	)
 	(junction
 		(at 243.84 74.93)
@@ -1766,22 +1784,10 @@
 		(uuid "8f605f99-a270-4dd4-af90-e03fc121a580")
 	)
 	(junction
-		(at 68.58 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "918822e0-f2bc-4db3-a884-2176a31d6a22")
-	)
-	(junction
 		(at 236.22 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "999a4fb1-3f94-4cf5-89c2-dbee3abbe57d")
-	)
-	(junction
-		(at 57.15 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a3304bf1-6df8-45d0-9ed6-7fd92840a313")
 	)
 	(junction
 		(at 199.39 45.72)
@@ -1805,13 +1811,7 @@
 		(at 144.78 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "ca7d9b87-beae-42e2-813d-aff643d19ca5")
-	)
-	(junction
-		(at 148.59 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cabf9545-0534-42a6-ae9f-a4c824573422")
+		(uuid "c561f1ab-aeb6-463b-8468-574679956f2a")
 	)
 	(junction
 		(at 109.22 45.72)
@@ -1820,28 +1820,16 @@
 		(uuid "cbcf400b-41ee-457a-b683-b4a66d2bc0c2")
 	)
 	(junction
-		(at 60.96 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d247f738-c425-4923-8b38-c323de64e7e6")
-	)
-	(junction
 		(at 191.77 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ded3af82-6fd0-4a78-8b93-a5ee5fe26ea9")
 	)
 	(junction
-		(at 160.02 74.93)
+		(at 57.15 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e6b3059f-8bbc-4568-bd94-059c3d8cbec9")
-	)
-	(junction
-		(at 53.34 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e71df03b-dad7-4c7e-9d8c-5338d6cf86ff")
+		(uuid "df68d382-d881-4e03-a465-b6f41a24bbe0")
 	)
 	(junction
 		(at 109.22 58.42)
@@ -1850,10 +1838,22 @@
 		(uuid "f078791d-5c17-4226-bf2d-d9e2bd64181b")
 	)
 	(junction
+		(at 60.96 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f549fdc7-bc12-42c0-bac1-6947778f51ea")
+	)
+	(junction
 		(at 152.4 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f556e37f-f39b-48dc-adc9-70fa52fc2c43")
+	)
+	(junction
+		(at 152.4 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f7a4d445-351b-49bd-8f0d-a45e46d43dcb")
 	)
 	(junction
 		(at 133.35 74.93)
@@ -1861,8 +1861,24 @@
 		(color 0 0 0 0)
 		(uuid "fb481bf9-4487-44f2-b7f6-cc35e1396789")
 	)
+	(no_connect
+		(at 129.54 152.4)
+		(uuid "45130fb5-a40c-4e13-b055-8763e337e760")
+	)
+	(no_connect
+		(at 129.54 142.24)
+		(uuid "64c992a3-fe20-42b3-a772-7465d0233a90")
+	)
+	(no_connect
+		(at 121.92 142.24)
+		(uuid "8387a597-5337-4bee-bd3e-ae75351f49e4")
+	)
+	(no_connect
+		(at 121.92 152.4)
+		(uuid "cfa59802-5b08-4dfb-b301-0d805f8f4d32")
+	)
 	(bus_entry
-		(at 158.75 96.52)
+		(at 158.75 99.06)
 		(size -2.54 -2.54)
 		(stroke
 			(width 0)
@@ -1871,7 +1887,7 @@
 		(uuid "18e50e3c-2bd5-4c73-b42b-702382c5f9c0")
 	)
 	(bus_entry
-		(at 50.8 38.1)
+		(at 50.8 35.56)
 		(size 2.54 2.54)
 		(stroke
 			(width 0)
@@ -1880,7 +1896,7 @@
 		(uuid "383037b0-49b8-4e34-ac3f-3fadbbcf93bc")
 	)
 	(bus_entry
-		(at 162.56 96.52)
+		(at 162.56 99.06)
 		(size -2.54 -2.54)
 		(stroke
 			(width 0)
@@ -1889,7 +1905,7 @@
 		(uuid "438a3f0d-dfc9-4363-ad55-0cb899cf7e31")
 	)
 	(bus_entry
-		(at 66.04 38.1)
+		(at 66.04 35.56)
 		(size 2.54 2.54)
 		(stroke
 			(width 0)
@@ -1898,7 +1914,7 @@
 		(uuid "63cdd0b7-0573-47a3-a882-ad036dfba231")
 	)
 	(bus_entry
-		(at 62.23 38.1)
+		(at 62.23 35.56)
 		(size 2.54 2.54)
 		(stroke
 			(width 0)
@@ -1907,7 +1923,7 @@
 		(uuid "6a18b2ab-81c1-4717-90e6-bf3aaaf4e7bb")
 	)
 	(bus_entry
-		(at 54.61 38.1)
+		(at 54.61 35.56)
 		(size 2.54 2.54)
 		(stroke
 			(width 0)
@@ -1916,7 +1932,7 @@
 		(uuid "87336c78-bdd3-4c93-af55-d60d5fbaec13")
 	)
 	(bus_entry
-		(at 58.42 38.1)
+		(at 58.42 35.56)
 		(size 2.54 2.54)
 		(stroke
 			(width 0)
@@ -1925,7 +1941,7 @@
 		(uuid "93004efe-9507-4f65-acee-b89a73d023ed")
 	)
 	(bus_entry
-		(at 147.32 96.52)
+		(at 147.32 99.06)
 		(size -2.54 -2.54)
 		(stroke
 			(width 0)
@@ -1934,7 +1950,7 @@
 		(uuid "ab0de69f-0da3-4b16-ade8-b843460a03be")
 	)
 	(bus_entry
-		(at 154.94 96.52)
+		(at 154.94 99.06)
 		(size -2.54 -2.54)
 		(stroke
 			(width 0)
@@ -1943,7 +1959,7 @@
 		(uuid "ac5ef183-2c12-4925-a544-ca295c23c678")
 	)
 	(bus_entry
-		(at 151.13 96.52)
+		(at 151.13 99.06)
 		(size -2.54 -2.54)
 		(stroke
 			(width 0)
@@ -1953,7 +1969,7 @@
 	)
 	(bus
 		(pts
-			(xy 49.53 38.1) (xy 50.8 38.1)
+			(xy 49.53 35.56) (xy 50.8 35.56)
 		)
 		(stroke
 			(width 0)
@@ -1963,7 +1979,7 @@
 	)
 	(bus
 		(pts
-			(xy 58.42 38.1) (xy 62.23 38.1)
+			(xy 58.42 35.56) (xy 62.23 35.56)
 		)
 		(stroke
 			(width 0)
@@ -1983,7 +1999,7 @@
 	)
 	(bus
 		(pts
-			(xy 54.61 38.1) (xy 58.42 38.1)
+			(xy 54.61 35.56) (xy 58.42 35.56)
 		)
 		(stroke
 			(width 0)
@@ -2003,7 +2019,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 80.01) (xy 148.59 93.98)
+			(xy 148.59 82.55) (xy 148.59 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2011,19 +2027,9 @@
 		)
 		(uuid "0c3530b6-31b1-43e9-aa4a-5cce815ea294")
 	)
-	(wire
-		(pts
-			(xy 152.4 74.93) (xy 156.21 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0cc7407b-1dce-4ae2-a30a-e4929c4af322")
-	)
 	(bus
 		(pts
-			(xy 154.94 96.52) (xy 151.13 96.52)
+			(xy 154.94 99.06) (xy 151.13 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2033,33 +2039,13 @@
 	)
 	(bus
 		(pts
-			(xy 158.75 96.52) (xy 154.94 96.52)
+			(xy 158.75 99.06) (xy 154.94 99.06)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "0f649554-4fa7-48b8-93af-c3996a0cc3a0")
-	)
-	(wire
-		(pts
-			(xy 60.96 63.5) (xy 64.77 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "163da309-5d31-4f6e-bdbb-735ac7746d19")
-	)
-	(wire
-		(pts
-			(xy 53.34 63.5) (xy 39.37 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "17e885ba-f96b-4180-b2fc-a1c6117ab870")
 	)
 	(wire
 		(pts
@@ -2081,9 +2067,19 @@
 		)
 		(uuid "1b831825-555b-4392-b4aa-e2015bcc8e41")
 	)
+	(wire
+		(pts
+			(xy 152.4 74.93) (xy 156.21 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1da409a9-d187-4956-a52a-aa1e314ed647")
+	)
 	(bus
 		(pts
-			(xy 162.56 96.52) (xy 158.75 96.52)
+			(xy 162.56 99.06) (xy 158.75 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2093,17 +2089,7 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 63.5) (xy 88.9 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f6b8f7b-7941-48cb-822d-9b7cfc5d417a")
-	)
-	(wire
-		(pts
-			(xy 156.21 80.01) (xy 156.21 93.98)
+			(xy 156.21 82.55) (xy 156.21 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2133,13 +2119,13 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 63.5) (xy 68.58 63.5)
+			(xy 68.58 63.5) (xy 88.9 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "23a0fe64-7736-4a4c-8785-ad79bb54fa31")
+		(uuid "2249773b-ca59-4c29-81d6-4fffd95b8190")
 	)
 	(wire
 		(pts
@@ -2173,7 +2159,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 74.93) (xy 162.56 74.93)
+			(xy 133.35 74.93) (xy 144.78 74.93)
 		)
 		(stroke
 			(width 0)
@@ -2183,7 +2169,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 80.01) (xy 152.4 93.98)
+			(xy 152.4 82.55) (xy 152.4 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2193,23 +2179,13 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 80.01) (xy 160.02 93.98)
+			(xy 160.02 82.55) (xy 160.02 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "3155dfd9-87c6-46e8-b2a9-032fea33774c")
-	)
-	(wire
-		(pts
-			(xy 144.78 74.93) (xy 148.59 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "32a08c7f-c8f1-49a4-80bf-d9ae3da8d41a")
 	)
 	(wire
 		(pts
@@ -2293,23 +2269,13 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 74.93) (xy 144.78 74.93)
+			(xy 148.59 74.93) (xy 152.4 74.93)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4c9761c9-a441-44ac-9678-54365031163a")
-	)
-	(wire
-		(pts
-			(xy 156.21 74.93) (xy 160.02 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4d2a61f4-f604-4845-82a5-02c0498d75c6")
+		(uuid "4d9a32cc-a52a-4371-9967-59da9d358c86")
 	)
 	(wire
 		(pts
@@ -2393,7 +2359,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 40.64) (xy 60.96 58.42)
+			(xy 60.96 38.1) (xy 60.96 55.88)
 		)
 		(stroke
 			(width 0)
@@ -2443,13 +2409,23 @@
 	)
 	(bus
 		(pts
-			(xy 62.23 38.1) (xy 66.04 38.1)
+			(xy 62.23 35.56) (xy 66.04 35.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "6e159ad9-f80f-45b2-b4e2-ee42b4427389")
+	)
+	(wire
+		(pts
+			(xy 144.78 74.93) (xy 148.59 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7793c1f3-95ae-42a7-bd9e-4b6226264ad5")
 	)
 	(wire
 		(pts
@@ -2463,7 +2439,7 @@
 	)
 	(bus
 		(pts
-			(xy 50.8 38.1) (xy 54.61 38.1)
+			(xy 50.8 35.56) (xy 54.61 35.56)
 		)
 		(stroke
 			(width 0)
@@ -2501,19 +2477,9 @@
 		)
 		(uuid "80df3c32-f34d-4c0c-8d0b-4a3dd81835f0")
 	)
-	(wire
-		(pts
-			(xy 148.59 74.93) (xy 152.4 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8266ffb0-a2bd-43f5-bca4-96c206d1588c")
-	)
 	(bus
 		(pts
-			(xy 165.1 96.52) (xy 162.56 96.52)
+			(xy 165.1 99.06) (xy 162.56 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2523,7 +2489,17 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 63.5) (xy 57.15 63.5)
+			(xy 57.15 63.5) (xy 60.96 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cba4494-bf7e-41ee-84b6-76693eca9ec6")
+	)
+	(wire
+		(pts
+			(xy 39.37 63.5) (xy 53.34 63.5)
 		)
 		(stroke
 			(width 0)
@@ -2643,13 +2619,23 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 63.5) (xy 60.96 63.5)
+			(xy 60.96 63.5) (xy 64.77 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bec1e4b9-4bc4-4a87-8eeb-214c031ea9db")
+		(uuid "bd2c7dbb-f2ba-41ea-a313-530681f09db0")
+	)
+	(wire
+		(pts
+			(xy 53.34 63.5) (xy 57.15 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3e0142c-d2d3-426d-bdc5-a864d2c42aee")
 	)
 	(wire
 		(pts
@@ -2673,7 +2659,7 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 40.64) (xy 64.77 58.42)
+			(xy 64.77 38.1) (xy 64.77 55.88)
 		)
 		(stroke
 			(width 0)
@@ -2690,6 +2676,16 @@
 			(type default)
 		)
 		(uuid "ccb43f5a-96b5-4a66-823e-2b5ffaedb4e9")
+	)
+	(wire
+		(pts
+			(xy 160.02 74.93) (xy 162.56 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccc39cb3-86cd-4886-a015-9a418cc14ffe")
 	)
 	(wire
 		(pts
@@ -2713,7 +2709,7 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 40.64) (xy 68.58 58.42)
+			(xy 68.58 38.1) (xy 68.58 55.88)
 		)
 		(stroke
 			(width 0)
@@ -2723,7 +2719,7 @@
 	)
 	(bus
 		(pts
-			(xy 151.13 96.52) (xy 147.32 96.52)
+			(xy 151.13 99.06) (xy 147.32 99.06)
 		)
 		(stroke
 			(width 0)
@@ -2763,13 +2759,23 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 40.64) (xy 53.34 58.42)
+			(xy 53.34 38.1) (xy 53.34 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ddc6a4c0-f654-4b3b-9039-6d3e3d366d5b")
+	)
+	(wire
+		(pts
+			(xy 156.21 74.93) (xy 160.02 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df009db4-9353-424e-8371-8f47a839f013")
 	)
 	(wire
 		(pts
@@ -2813,7 +2819,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 80.01) (xy 144.78 93.98)
+			(xy 144.78 82.55) (xy 144.78 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2843,7 +2849,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 40.64) (xy 57.15 58.42)
+			(xy 57.15 38.1) (xy 57.15 55.88)
 		)
 		(stroke
 			(width 0)
@@ -2871,8 +2877,18 @@
 		)
 		(uuid "f82a77c3-8d8f-45e9-bc2c-db8692449535")
 	)
+	(wire
+		(pts
+			(xy 64.77 63.5) (xy 68.58 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fbff1891-6f5e-4326-9f0c-b0df380a5b73")
+	)
 	(label "MAG_SENSOR3"
-		(at 64.77 54.61 90)
+		(at 64.77 52.07 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2883,7 +2899,7 @@
 		(uuid "04c60f0b-daea-481d-9e82-1d5e0472b733")
 	)
 	(label "BUTTONS3"
-		(at 148.59 83.82 270)
+		(at 148.59 86.36 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2894,7 +2910,7 @@
 		(uuid "139d285e-55b9-4b73-8885-9bbb4ef4215d")
 	)
 	(label "BUTTONS2"
-		(at 152.4 83.82 270)
+		(at 152.4 86.36 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2905,7 +2921,7 @@
 		(uuid "29f46b9d-8d87-42ac-bead-1ac38123acbc")
 	)
 	(label "BUTTONS4"
-		(at 144.78 83.82 270)
+		(at 144.78 86.36 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2916,7 +2932,7 @@
 		(uuid "488026bd-195a-4b62-ba54-c68fea9c18c2")
 	)
 	(label "BUTTONS1"
-		(at 156.21 83.82 270)
+		(at 156.21 86.36 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2927,7 +2943,7 @@
 		(uuid "4a74d669-d312-4259-a613-6df9804c96b5")
 	)
 	(label "MAG_SENSOR0"
-		(at 53.34 54.61 90)
+		(at 53.34 52.07 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2938,7 +2954,7 @@
 		(uuid "7685f6ee-b4cb-4c7c-b164-5ec4fd07c5c2")
 	)
 	(label "MAG_SENSOR2"
-		(at 60.96 54.61 90)
+		(at 60.96 52.07 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2949,7 +2965,7 @@
 		(uuid "85820d94-da47-4778-b50a-ae28f24a3bbf")
 	)
 	(label "BUTTONS0"
-		(at 160.02 83.82 270)
+		(at 160.02 86.36 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2960,7 +2976,7 @@
 		(uuid "abb775f2-52e0-4c45-86dc-679914105774")
 	)
 	(label "MAG_SENSOR4"
-		(at 68.58 54.61 90)
+		(at 68.58 52.07 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2971,7 +2987,7 @@
 		(uuid "c9b5bb6c-4ef4-4dc1-a358-053b2565383c")
 	)
 	(label "MAG_SENSOR1"
-		(at 57.15 54.61 90)
+		(at 57.15 52.07 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3043,7 +3059,7 @@
 	)
 	(hierarchical_label "MAG_SENSOR[0..4]"
 		(shape input)
-		(at 49.53 38.1 180)
+		(at 49.53 35.56 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3055,7 +3071,7 @@
 	)
 	(hierarchical_label "BUTTONS[0..4]"
 		(shape input)
-		(at 165.1 96.52 0)
+		(at 165.1 99.06 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3120,6 +3136,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 208.28 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 208.28 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d41d5378-5b43-4aae-a1d1-03c5027843e0")
 		)
@@ -3130,182 +3164,6 @@
 			(project "boombox"
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Small")
-		(at 160.02 77.47 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0eca72f8-d44c-4a0b-9694-149b5da9b21c")
-		(property "Reference" "D6"
-			(at 161.29 73.152 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Small"
-			(at 157.48 76.2001 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 160.02 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 160.02 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Diode, small symbol"
-			(at 160.02 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 160.02 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 160.02 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "617f7882-add7-4fe3-b262-844f28a533a1")
-		)
-		(pin "1"
-			(uuid "17248a41-ca42-4c9e-a240-e16817002075")
-		)
-		(instances
-			(project "boombox"
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Small")
-		(at 64.77 60.96 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "18df0491-8ac7-488a-a534-fe32a211eeb1")
-		(property "Reference" "D4"
-			(at 63.5 65.278 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Small"
-			(at 67.31 62.2299 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 64.77 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 64.77 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Diode, small symbol"
-			(at 64.77 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 64.77 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 64.77 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "05c61c77-7533-4d6c-a279-27dd946d1e1b")
-		)
-		(pin "1"
-			(uuid "570e8894-06d9-46f5-8888-0a6f0b7acff6")
-		)
-		(instances
-			(project "boombox"
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -3442,6 +3300,97 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 68.58 59.69 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2307e100-d206-41cd-9b29-dcfbedf5b4c8")
+		(property "Reference" "D1"
+			(at 70.358 65.024 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 84.836 54.102 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 66.04 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 66.04 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 68.58 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 68.58 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 68.58 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fdc9b2e9-8466-4826-9bfb-44a1e426d0e6")
+		)
+		(pin "1"
+			(uuid "97188845-462c-468e-b556-50f22a2ac5c4")
+		)
+		(pin "3"
+			(uuid "4b2466bc-55e9-4248-a650-b465faaa7ad0")
+		)
+		(instances
+			(project "boombox"
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "boombox:DMP31D1U-7")
 		(at 74.93 118.11 180)
 		(unit 1)
@@ -3495,6 +3444,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 74.93 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 74.93 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "45f4639e-5c93-4cf9-af82-b97e2d714966")
 		)
@@ -3514,16 +3481,16 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Small")
-		(at 60.96 60.96 90)
-		(unit 1)
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 64.77 59.69 270)
+		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "33627100-2660-4478-becd-3c090c1f490b")
-		(property "Reference" "D3"
-			(at 59.69 65.278 90)
+		(uuid "3759a05b-ef69-4ca9-ab90-828c0542f78c")
+		(property "Reference" "D1"
+			(at 66.548 64.77 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3531,8 +3498,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D_Small"
-			(at 63.5 62.2299 90)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 74.93 53.594 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3541,8 +3508,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
-			(at 60.96 60.96 90)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 62.23 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3550,8 +3517,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 60.96 60.96 90)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 62.23 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3559,8 +3526,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Diode, small symbol"
-			(at 60.96 60.96 0)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 64.77 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3568,8 +3535,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 60.96 60.96 0)
+		(property "Sim.Device" ""
+			(at 64.77 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3577,8 +3544,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 60.96 60.96 0)
+		(property "Sim.Pins" ""
+			(at 64.77 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3587,16 +3554,19 @@
 			)
 		)
 		(pin "2"
-			(uuid "558d045e-1889-420f-a316-0c9c719c6205")
+			(uuid "1337f1fb-1423-4794-ac37-f8de70a1ae0a")
 		)
 		(pin "1"
-			(uuid "2057a463-288b-45fa-96f1-090fa3902641")
+			(uuid "7a2d42e1-d406-4b67-bf4d-554714a13226")
+		)
+		(pin "3"
+			(uuid "f30b119e-463d-45a0-bee3-0963529c9d68")
 		)
 		(instances
 			(project "boombox"
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D3")
-					(unit 1)
+					(reference "D1")
+					(unit 2)
 				)
 			)
 		)
@@ -3653,6 +3623,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 133.35 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 133.35 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "1f22d7ee-5cd3-4820-ade2-2e0ec202b51c")
 		)
@@ -3663,94 +3651,6 @@
 			(project ""
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Small")
-		(at 68.58 60.96 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3c1a50c9-6625-416c-9c89-102cffa20dba")
-		(property "Reference" "D5"
-			(at 67.31 65.278 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Small"
-			(at 71.12 62.2299 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 68.58 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 68.58 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Diode, small symbol"
-			(at 68.58 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 68.58 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 68.58 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "7a219bef-9525-4217-b9f0-cf6e7d315bb8")
-		)
-		(pin "1"
-			(uuid "6c6664d5-5243-4d66-86a4-acee8aec7dd0")
-		)
-		(instances
-			(project "boombox"
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -3800,6 +3700,24 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
+			(at 82.55 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 82.55 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
 			(at 82.55 73.66 0)
 			(effects
 				(font
@@ -3889,94 +3807,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Small")
-		(at 152.4 77.47 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "496056b1-5291-4871-b715-936c47a961d5")
-		(property "Reference" "D8"
-			(at 153.67 73.152 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Small"
-			(at 149.86 76.2001 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 152.4 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 152.4 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Diode, small symbol"
-			(at 152.4 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 152.4 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 152.4 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "76e67ecd-6a27-43ea-b0cb-d3a95a5b3e46")
-		)
-		(pin "1"
-			(uuid "6ae7e557-1513-4186-bc4b-46b649c21d69")
-		)
-		(instances
-			(project "boombox"
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "boombox:DMP31D1U-7")
 		(at 95.25 63.5 0)
 		(mirror x)
@@ -4031,6 +3861,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 95.25 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 95.25 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d3c5a150-a936-4782-a8f0-1b031ee70773")
 		)
@@ -4044,94 +3892,6 @@
 			(project ""
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Small")
-		(at 156.21 77.47 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5159488b-e6f3-492e-99a8-8064b9975c1c")
-		(property "Reference" "D7"
-			(at 157.48 73.152 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Small"
-			(at 153.67 76.2001 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 156.21 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 156.21 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Diode, small symbol"
-			(at 156.21 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 156.21 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 156.21 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "f13fd4fb-7d75-4a26-837b-036c52607a30")
-		)
-		(pin "1"
-			(uuid "e98bcbda-4c6f-4577-a7ca-5c5b2e8cc876")
-		)
-		(instances
-			(project "boombox"
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D7")
 					(unit 1)
 				)
 			)
@@ -4203,94 +3963,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Small")
-		(at 144.78 77.47 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "590fd063-9213-49ff-a610-b03363acb206")
-		(property "Reference" "D10"
-			(at 146.05 73.152 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Small"
-			(at 142.24 76.2001 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 144.78 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.78 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Diode, small symbol"
-			(at 144.78 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 144.78 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 144.78 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "0c616ea2-d23d-4779-9f74-6d453b0707a9")
-		)
-		(pin "1"
-			(uuid "ea7daea0-3bf2-48eb-87f9-2ae44d8588dc")
-		)
-		(instances
-			(project "boombox"
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 199.39 45.72 0)
 		(unit 1)
@@ -4351,94 +4023,6 @@
 			(project ""
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "#FLG01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Small")
-		(at 148.59 77.47 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5ff683d8-e47e-4181-b228-03b5351c3ca8")
-		(property "Reference" "D9"
-			(at 149.86 73.152 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Small"
-			(at 146.05 76.2001 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 148.59 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 148.59 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Diode, small symbol"
-			(at 148.59 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 148.59 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 148.59 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b46fc3cd-4600-4a5f-8ffc-4eefe3b747e1")
-		)
-		(pin "1"
-			(uuid "00d30e8b-d9ae-43aa-81f4-a91d7800a38e")
-		)
-		(instances
-			(project "boombox"
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D9")
 					(unit 1)
 				)
 			)
@@ -4564,6 +4148,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 83.82 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 83.82 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c98ee584-a05a-4623-93c8-cb40829a8fbe")
 		)
@@ -4648,6 +4250,97 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 152.4 78.74 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7a4b5427-7328-4ce8-b939-09a58bfb01da")
+		(property "Reference" "D7"
+			(at 150.622 73.406 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 137.668 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 154.94 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 154.94 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 152.4 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 152.4 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 152.4 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fdc9b2e9-8466-4826-9bfb-44a1e426d0e4")
+		)
+		(pin "1"
+			(uuid "7ef2076d-e78d-424b-ab93-e94a8ee704a1")
+		)
+		(pin "3"
+			(uuid "79406310-ca29-46c1-b303-58b20f278b78")
+		)
+		(instances
+			(project "boombox"
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "D7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 213.36 33.02 0)
 		(unit 1)
@@ -4713,16 +4406,16 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Small")
-		(at 57.15 60.96 90)
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 60.96 59.69 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7bd4036d-7fa3-4796-a220-d32f4e274f20")
+		(uuid "7e1eb9d3-290b-4da5-9044-f27ad12ea005")
 		(property "Reference" "D2"
-			(at 55.88 65.278 90)
+			(at 62.738 65.024 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4730,8 +4423,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D_Small"
-			(at 59.69 62.2299 90)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 75.692 53.34 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4740,8 +4433,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
-			(at 57.15 60.96 90)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 58.42 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4749,8 +4442,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 57.15 60.96 90)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 58.42 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4758,8 +4451,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Diode, small symbol"
-			(at 57.15 60.96 0)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 60.96 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4767,8 +4460,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 57.15 60.96 0)
+		(property "Sim.Device" ""
+			(at 60.96 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4776,8 +4469,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 57.15 60.96 0)
+		(property "Sim.Pins" ""
+			(at 60.96 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4786,15 +4479,109 @@
 			)
 		)
 		(pin "2"
-			(uuid "e9c1a5a5-c2fa-4cf8-9919-3530178973a9")
+			(uuid "fdc9b2e9-8466-4826-9bfb-44a1e426d0e5")
 		)
 		(pin "1"
-			(uuid "482bf80b-f7e6-401e-af21-b46388e39aa6")
+			(uuid "0bb11f16-4770-4492-81c0-b63dde9615a8")
+		)
+		(pin "3"
+			(uuid "161a4ba5-33ba-4dfa-8cac-7f43c172aa08")
 		)
 		(instances
 			(project "boombox"
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 160.02 78.74 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "81cc314d-367e-4d2f-8f3e-9e1fc076e0ce")
+		(property "Reference" "D8"
+			(at 158.242 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 141.732 84.074 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 162.56 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 162.56 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 160.02 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 160.02 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 160.02 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fdc9b2e9-8466-4826-9bfb-44a1e426d0e7")
+		)
+		(pin "1"
+			(uuid "723cdff4-efcb-408b-a700-e7c01c809122")
+		)
+		(pin "3"
+			(uuid "f3dbd196-e9e8-4040-9ae2-d8e13b1e82d7")
+		)
+		(instances
+			(project "boombox"
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -4847,6 +4634,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 152.4 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 152.4 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
 			(at 152.4 48.26 0)
 			(effects
 				(font
@@ -4924,6 +4729,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 52.07 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 52.07 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "b43827ae-5320-4788-9649-0aaf7f301bd8")
 		)
@@ -4937,6 +4760,97 @@
 			(project "boombox"
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "Q7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 144.78 78.74 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9cd0e12b-34c1-4a05-98df-7582b84aad43")
+		(property "Reference" "D6"
+			(at 143.002 73.406 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 128.524 84.328 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 147.32 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 147.32 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 144.78 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 144.78 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 144.78 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fdc9b2e9-8466-4826-9bfb-44a1e426d0e8")
+		)
+		(pin "1"
+			(uuid "7a2d42e1-d406-4b67-bf4d-554714a13224")
+		)
+		(pin "3"
+			(uuid "8738a709-ea28-4b08-92d0-6d7d85a792fc")
+		)
+		(instances
+			(project ""
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "D6")
 					(unit 1)
 				)
 			)
@@ -5063,6 +4977,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 168.91 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 168.91 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "779a5561-b12f-4110-a4f9-19f1e68c4f1a")
 		)
@@ -5136,6 +5068,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 193.04 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 193.04 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "c9c6987f-0def-464e-bc86-b1466cb9d948")
 		)
@@ -5182,7 +5132,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "boombox:Degson 3 Pin"
 			(at 208.28 27.94 0)
 			(effects
 				(font
@@ -5209,6 +5159,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 208.28 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 208.28 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "291cf296-539c-42bf-a67c-42410fe46a53")
 		)
@@ -5225,16 +5193,16 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Small")
-		(at 53.34 60.96 90)
-		(unit 1)
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 156.21 78.74 90)
+		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "aa666b6d-852f-4e20-83f0-f42185d3c736")
-		(property "Reference" "D1"
-			(at 52.07 65.278 90)
+		(uuid "a96a1336-2fe1-432e-9e9d-3f5ff05532a3")
+		(property "Reference" "D7"
+			(at 154.178 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5242,8 +5210,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D_Small"
-			(at 55.88 62.2299 90)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 142.24 84.328 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5252,8 +5220,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
-			(at 53.34 60.96 90)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 158.75 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5261,8 +5229,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 53.34 60.96 90)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 158.75 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5270,8 +5238,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Diode, small symbol"
-			(at 53.34 60.96 0)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 156.21 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5279,8 +5247,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" "D"
-			(at 53.34 60.96 0)
+		(property "Sim.Device" ""
+			(at 156.21 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5288,8 +5256,8 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 53.34 60.96 0)
+		(property "Sim.Pins" ""
+			(at 156.21 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5298,16 +5266,19 @@
 			)
 		)
 		(pin "2"
-			(uuid "5d812a9f-c4c3-42c9-b8fe-109215ee7265")
+			(uuid "65e5861e-72c5-4d3a-b05a-9a6909a66e7f")
 		)
 		(pin "1"
-			(uuid "b334f22f-f239-4a2c-a61c-85aff2825029")
+			(uuid "7a2d42e1-d406-4b67-bf4d-554714a13225")
+		)
+		(pin "3"
+			(uuid "774bb6dd-183d-469b-93b9-fde686c09e60")
 		)
 		(instances
-			(project ""
+			(project "boombox"
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D1")
-					(unit 1)
+					(reference "D7")
+					(unit 2)
 				)
 			)
 		)
@@ -5371,6 +5342,24 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 176.53 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 176.53 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "4"
@@ -5518,6 +5507,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 96.52 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 96.52 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ffe37ae4-17a9-4f4b-8388-3a14e85b77de")
 		)
@@ -5561,7 +5568,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 208.28 41.91 0)
 			(effects
 				(font
@@ -5570,7 +5577,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "${KIPRJMOD}/datasheets/cmhsh5-2l-1518611.pdf"
 			(at 208.28 41.91 0)
 			(effects
 				(font
@@ -5580,6 +5587,24 @@
 			)
 		)
 		(property "Description" "Schottky diode"
+			(at 208.28 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 208.28 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
 			(at 208.28 41.91 0)
 			(effects
 				(font
@@ -5599,6 +5624,277 @@
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "D12")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 125.73 142.24 180)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c85b5ef8-c22a-4fd1-9a50-45c4a2b75e5c")
+		(property "Reference" "D8"
+			(at 125.73 139.192 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 125.73 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 128.27 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 128.27 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 125.73 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 125.73 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 125.73 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "71f5641e-6022-470f-b816-ca138ee78c3a")
+		)
+		(pin "1"
+			(uuid "7a2d42e1-d406-4b67-bf4d-554714a13227")
+		)
+		(pin "3"
+			(uuid "bf482240-4d2e-4dc5-95a5-9016879d9e7f")
+		)
+		(instances
+			(project "boombox"
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "D8")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 57.15 59.69 270)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cb8f1749-76be-4e2b-9a63-5e47a6b96143")
+		(property "Reference" "D2"
+			(at 59.182 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 71.12 54.102 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 54.61 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 54.61 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 57.15 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 57.15 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 57.15 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e5a744a5-3d2c-45fb-b343-81e550fdd6d9")
+		)
+		(pin "1"
+			(uuid "7a2d42e1-d406-4b67-bf4d-554714a13228")
+		)
+		(pin "3"
+			(uuid "96b8b94a-7e52-4083-be6b-4a3654fed0cf")
+		)
+		(instances
+			(project "boombox"
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "D2")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 148.59 78.74 90)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cd637a00-b864-4f34-b6fe-7c1ef89e91f0")
+		(property "Reference" "D6"
+			(at 146.812 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 138.43 84.836 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 151.13 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 151.13 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 148.59 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 148.59 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 148.59 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fdc9b2e9-8466-4826-9bfb-44a1e426d0e9")
+		)
+		(pin "1"
+			(uuid "7a2d42e1-d406-4b67-bf4d-554714a13229")
+		)
+		(pin "3"
+			(uuid "8738a709-ea28-4b08-92d0-6d7d85a792fd")
+		)
+		(instances
+			(project ""
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "D6")
+					(unit 2)
 				)
 			)
 		)
@@ -5658,6 +5954,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 242.57 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 242.57 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "c9855378-3d35-4c7c-b320-29820f54932d")
 		)
@@ -5672,6 +5986,95 @@
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "Q4")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 125.73 152.4 180)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d335b88b-cc37-4c33-bb8a-6983d82f79ed")
+		(property "Reference" "D3"
+			(at 125.984 149.098 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 125.73 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 128.27 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 128.27 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 125.73 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 125.73 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 125.73 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b86af240-8904-45c6-839d-137715b4d451")
+		)
+		(pin "1"
+			(uuid "7a2d42e1-d406-4b67-bf4d-554714a1322a")
+		)
+		(pin "3"
+			(uuid "4383728d-8683-43d5-a0c4-f79bf82f0639")
+		)
+		(instances
+			(project "boombox"
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "D3")
+					(unit 2)
 				)
 			)
 		)
@@ -5796,6 +6199,24 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 236.22 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 236.22 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "076835f7-d5bd-49ba-b547-3e144c209fe1")
 		)
@@ -5906,7 +6327,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 152.4 36.83 0)
 			(effects
 				(font
@@ -5915,7 +6336,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "${KIPRJMOD}/datasheets/cmhsh5-2l-1518611.pdf"
 			(at 152.4 36.83 0)
 			(effects
 				(font
@@ -5925,6 +6346,24 @@
 			)
 		)
 		(property "Description" "Schottky diode"
+			(at 152.4 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 152.4 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
 			(at 152.4 36.83 0)
 			(effects
 				(font
@@ -5949,6 +6388,97 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
+		(at 53.34 59.69 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f0e3088e-83d4-4c01-b649-6ef339a9523a")
+		(property "Reference" "D3"
+			(at 55.118 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D_Dual_CommonCathode_AAK_Split"
+			(at 71.628 54.356 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 50.8 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
+			(at 50.8 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual diode, common cathode on pin 1"
+			(at 53.34 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 53.34 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 53.34 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fdc9b2e9-8466-4826-9bfb-44a1e426d0ea")
+		)
+		(pin "1"
+			(uuid "5012b088-f6f6-4e88-8d19-f6f00283e876")
+		)
+		(pin "3"
+			(uuid "ef179595-f806-4f7f-ba34-535f2785ff63")
+		)
+		(instances
+			(project "boombox"
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 199.39 81.28 0)
 		(unit 1)
@@ -5967,7 +6497,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10pF"
+		(property "Value" "6pF"
 			(at 201.93 82.5562 0)
 			(effects
 				(font
@@ -5976,7 +6506,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 199.39 81.28 0)
 			(effects
 				(font
@@ -5995,6 +6525,24 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 199.39 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 199.39 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
 			(at 199.39 81.28 0)
 			(effects
 				(font
