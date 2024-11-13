@@ -5,7 +5,7 @@
 	(uuid "59af5e82-c864-4e22-98d7-623a864cf1d0")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Connector_Audio:AudioJack4"
+		(symbol "Connector_Audio:AudioJack2"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -17,7 +17,7 @@
 					)
 				)
 			)
-			(property "Value" "AudioJack4"
+			(property "Value" "AudioJack2"
 				(at 0 6.35 0)
 				(effects
 					(font
@@ -43,7 +43,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Audio Jack, 4 Poles (TRRS)"
+			(property "Description" "Audio Jack, 2 Poles (Mono / TS)"
 				(at 0 0 0)
 				(effects
 					(font
@@ -52,7 +52,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "audio jack receptacle stereo headphones TRRS connector"
+			(property "ki_keywords" "audio jack receptacle mono phone headphone TS connector"
 				(at 0 0 0)
 				(effects
 					(font
@@ -70,10 +70,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "AudioJack4_0_1"
+			(symbol "AudioJack2_0_1"
 				(rectangle
-					(start -6.35 -5.08)
-					(end -7.62 -7.62)
+					(start -3.81 0)
+					(end -2.54 -2.54)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -82,57 +82,9 @@
 						(type outline)
 					)
 				)
-				(polyline
-					(pts
-						(xy 0 -5.08) (xy 0.635 -5.715) (xy 1.27 -5.08) (xy 2.54 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -5.715 -5.08) (xy -5.08 -5.715) (xy -4.445 -5.08) (xy -4.445 2.54) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.905 -5.08) (xy -1.27 -5.715) (xy -0.635 -5.08) (xy -0.635 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy -2.54 0) (xy -2.54 -5.08) (xy -3.175 -5.715) (xy -3.81 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(rectangle
-					(start 2.54 3.81)
-					(end -6.35 -7.62)
+					(start -2.54 3.81)
+					(end 2.54 -2.54)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -141,44 +93,32 @@
 						(type background)
 					)
 				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0.635 -0.635) (xy 1.27 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy -0.635 2.54) (xy -0.635 0) (xy -1.27 -0.635) (xy -1.905 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 			)
-			(symbol "AudioJack4_1_1"
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "R1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "R2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
+			(symbol "AudioJack2_1_1"
 				(pin passive line
 					(at 5.08 2.54 180)
 					(length 2.54)
@@ -198,7 +138,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 -5.08 180)
+					(at 5.08 0 180)
 					(length 2.54)
 					(name "~"
 						(effects
@@ -1431,18 +1371,10 @@
 		(uuid "fb89db04-1aba-42fc-91f2-93dcaa5a74d5")
 	)
 	(junction
-		(at 168.91 55.88)
+		(at 168.91 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fc617dfc-565f-49df-b835-0b1372da1d99")
-	)
-	(no_connect
-		(at 175.26 60.96)
-		(uuid "5c68ae44-43ce-4218-84d5-3ac211b967d7")
-	)
-	(no_connect
-		(at 175.26 58.42)
-		(uuid "b125102a-9d7c-4682-943f-30e33b16bc8d")
 	)
 	(wire
 		(pts
@@ -1466,7 +1398,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 63.5) (xy 175.26 63.5)
+			(xy 161.29 60.96) (xy 175.26 60.96)
 		)
 		(stroke
 			(width 0)
@@ -1516,7 +1448,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 40.64) (xy 168.91 55.88)
+			(xy 168.91 40.64) (xy 168.91 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1656,16 +1588,6 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 63.5) (xy 161.29 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c75f71d-1517-4707-b84b-7a525edd31e9")
-	)
-	(wire
-		(pts
 			(xy 186.69 137.16) (xy 189.23 137.16)
 		)
 		(stroke
@@ -1683,16 +1605,6 @@
 			(type default)
 		)
 		(uuid "61daca3e-43a3-46c8-92ea-59195dcd3181")
-	)
-	(wire
-		(pts
-			(xy 161.29 55.88) (xy 161.29 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "680edb6c-53d9-4304-a272-a6204ed58e2d")
 	)
 	(wire
 		(pts
@@ -1726,7 +1638,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 55.88) (xy 168.91 55.88)
+			(xy 161.29 58.42) (xy 168.91 58.42)
 		)
 		(stroke
 			(width 0)
@@ -1856,7 +1768,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 55.88) (xy 175.26 55.88)
+			(xy 168.91 58.42) (xy 175.26 58.42)
 		)
 		(stroke
 			(width 0)
@@ -3228,7 +3140,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "boombox:Degson 3 Pin"
+		(property "Footprint" "boombox:EBAA02C"
 			(at 214.63 119.38 0)
 			(effects
 				(font
@@ -4145,8 +4057,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Audio:AudioJack4")
-		(at 180.34 60.96 180)
+		(lib_id "Connector_Audio:AudioJack2")
+		(at 180.34 58.42 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4154,14 +4066,6 @@
 		(dnp no)
 		(uuid "f3d4766c-d190-4a52-b2db-03148925fb66")
 		(property "Reference" "J2"
-			(at 182.88 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "AudioJack4"
 			(at 182.88 67.31 0)
 			(effects
 				(font
@@ -4169,8 +4073,16 @@
 				)
 			)
 		)
-		(property "Footprint" "boombox:Degson 3 Pin"
-			(at 180.34 60.96 0)
+		(property "Value" "AudioJack4"
+			(at 182.88 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "boombox:EBAA02C_Audio"
+			(at 180.34 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4178,8 +4090,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "${KIPRJMOD}/datasheets/headphone.pdf"
-			(at 180.34 60.96 0)
+		(property "Datasheet" "~"
+			(at 180.34 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4187,8 +4099,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Audio Jack, 4 Poles (TRRS)"
-			(at 180.34 60.96 0)
+		(property "Description" "Audio Jack, 2 Poles (Mono / TS)"
+			(at 180.34 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4197,7 +4109,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 180.34 60.96 0)
+			(at 180.34 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4206,7 +4118,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 180.34 60.96 0)
+			(at 180.34 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4219,12 +4131,6 @@
 		)
 		(pin "S"
 			(uuid "d4a7cdc7-0502-4656-94e0-52e1d2a83e0e")
-		)
-		(pin "R2"
-			(uuid "ece3088f-847e-46c0-8c11-e924fca22cf6")
-		)
-		(pin "R1"
-			(uuid "f64dc9b4-32ca-45d2-94a5-f859eb5577d8")
 		)
 		(instances
 			(project "boombox"

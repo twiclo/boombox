@@ -534,54 +534,6 @@
 		(layer "F.SilkS")
 		(uuid "54ed3ee1-891b-418e-ab9c-6a18747d7388")
 	)
-	(fp_poly
-		(pts
-			(xy -1.5 -16.5) (xy -3.5 -16.5) (xy -3.5 -18.5) (xy -1.5 -18.5)
-		)
-		(stroke
-			(width 0.1)
-			(type solid)
-		)
-		(fill solid)
-		(layer "Dwgs.User")
-		(uuid "022502e0-e724-4b75-bc35-3c5984dbeb76")
-	)
-	(fp_poly
-		(pts
-			(xy -1.5 -14) (xy -3.5 -14) (xy -3.5 -16) (xy -1.5 -16)
-		)
-		(stroke
-			(width 0.1)
-			(type solid)
-		)
-		(fill solid)
-		(layer "Dwgs.User")
-		(uuid "d655bb0a-cbf9-4908-ad60-7024ff468fbd")
-	)
-	(fp_poly
-		(pts
-			(xy -1.5 -11.5) (xy -3.5 -11.5) (xy -3.5 -13.5) (xy -1.5 -13.5)
-		)
-		(stroke
-			(width 0.1)
-			(type solid)
-		)
-		(fill solid)
-		(layer "Dwgs.User")
-		(uuid "9f969b13-1795-4747-8326-93bdc304ed56")
-	)
-	(fp_poly
-		(pts
-			(xy 3.7 -20.2) (xy -3.7 -20.2) (xy -3.7 -24.9) (xy 3.7 -24.9)
-		)
-		(stroke
-			(width 0.1)
-			(type solid)
-		)
-		(fill solid)
-		(layer "Dwgs.User")
-		(uuid "b9d4de74-d246-495d-8b63-12ab2133d6d6")
-	)
 	(fp_line
 		(start -11 -26)
 		(end 11 -26)
@@ -1915,20 +1867,22 @@
 		(layers "F.Cu" "F.Mask")
 		(uuid "aadc3df5-0e2d-4f3d-b72e-6f184da74c89")
 	)
-	(pad "44" thru_hole circle
-		(at 0.82 -24.32)
-		(size 1.2 1.2)
+	(pad "44" thru_hole roundrect
+		(at -1 -24.3)
+		(size 0.8 0.8)
 		(drill 0.5)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
+		(roundrect_rratio 0.2083333333)
 		(uuid "00893579-5ad7-4cff-9a40-2bb28a693a26")
 	)
-	(pad "44" thru_hole circle
-		(at 5.8 -24.3)
-		(size 1.2 1.2)
+	(pad "45" thru_hole roundrect
+		(at 1 -24.3)
+		(size 0.8 0.8)
 		(drill 0.5)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
+		(roundrect_rratio 0.2083333333)
 		(uuid "9d1716a3-8f3c-443d-be63-0610870b6e36")
 	)
 	(model "C:/Users/ncara/OneDrive/IoT/Tools/KiCad/RP-Pico Libraries/Pico.wrl"

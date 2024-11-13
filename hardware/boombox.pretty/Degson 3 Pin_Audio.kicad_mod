@@ -1,10 +1,10 @@
-(footprint "Degson 3 Pin"
+(footprint "Degson 3 Pin_Audio"
 	(version 20240108)
 	(generator "pcbnew")
 	(generator_version "8.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
-		(at 0 -12.5 0)
+		(at 0 -7.5 0)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(uuid "85c70601-f067-418c-9096-62ee8fae282e")
@@ -15,8 +15,8 @@
 			)
 		)
 	)
-	(property "Value" "Degson 3 Pin"
-		(at 0 -11 0)
+	(property "Value" "Degson 3 Pin_Audio"
+		(at 0.25 -9.25 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "0313a124-8c94-41d1-940a-fd005650a540")
@@ -28,7 +28,7 @@
 		)
 	)
 	(property "Footprint" ""
-		(at 0 -12 0)
+		(at 0 -7 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
@@ -41,7 +41,7 @@
 		)
 	)
 	(property "Datasheet" ""
-		(at 0 -12 0)
+		(at 0 -7 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
@@ -54,7 +54,7 @@
 		)
 	)
 	(property "Description" ""
-		(at 0 -12 0)
+		(at 0 -7 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
@@ -68,29 +68,29 @@
 	)
 	(attr through_hole)
 	(fp_rect
-		(start -8 -7.5)
-		(end 8 6.5)
+		(start -8 -4.25)
+		(end 8 9.75)
 		(stroke
 			(width 0.1)
 			(type default)
 		)
 		(fill none)
 		(layer "F.SilkS")
-		(uuid "6d2e44db-0ae1-4662-b591-c2f39fe171ad")
+		(uuid "48bae35c-ce01-46b4-b028-34417cdceba6")
 	)
 	(fp_rect
-		(start -8.5 -8)
-		(end 8.5 7)
+		(start -8.5 -4.75)
+		(end 8.5 10.25)
 		(stroke
 			(width 0.05)
 			(type default)
 		)
 		(fill none)
 		(layer "F.CrtYd")
-		(uuid "b9618b13-450a-4dc2-82a0-f693d5d37cec")
+		(uuid "24979ac4-055b-448b-ae3c-194f187e236e")
 	)
 	(fp_text user "${REFERENCE}"
-		(at 0 -9.5 0)
+		(at 0 -6 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "4679b6c2-7b48-412c-b787-342c209b11d1")
@@ -101,28 +101,28 @@
 			)
 		)
 	)
-	(pad "1" thru_hole circle
-		(at -5 -3.25)
+	(pad "3" thru_hole circle
+		(at 5 0)
 		(size 1.524 1.524)
 		(drill 0.762)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "f3e3329e-2ff6-48be-a72e-0f58761b2dd3")
+		(uuid "89a26b4d-4e6a-4b24-93e1-9df57da4404f")
 	)
-	(pad "2" thru_hole circle
-		(at 0 -3.25)
+	(pad "S" thru_hole circle
+		(at 0 0)
 		(size 1.524 1.524)
 		(drill 0.762)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "6ee53fc0-0a77-44f2-9af1-4e816ebf3ff2")
 	)
-	(pad "3" thru_hole circle
-		(at 5 -3.25)
+	(pad "T" thru_hole circle
+		(at -5 0)
 		(size 1.524 1.524)
 		(drill 0.762)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "89a26b4d-4e6a-4b24-93e1-9df57da4404f")
+		(uuid "f3e3329e-2ff6-48be-a72e-0f58761b2dd3")
 	)
 )

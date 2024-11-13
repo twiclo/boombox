@@ -2015,8 +2015,8 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
-				(at -13.97 27.94 0)
+			(property "Reference" "U1"
+				(at 0 -7.62 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2024,14 +2024,14 @@
 				)
 			)
 			(property "Value" "Pico"
-				(at 0 19.05 0)
+				(at 0 -9.652 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "RPi_Pico:RPi_Pico_SMD_TH"
+			(property "Footprint" "boombox:RPi_Pico_SMD_TH"
 				(at 0 0 90)
 				(effects
 					(font
@@ -2040,7 +2040,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "${KIPRJMOD}/datasheets/picow.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2050,6 +2050,24 @@
 				)
 			)
 			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -2767,7 +2785,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at -2.54 29.21 270)
+					(at 2.54 29.21 270)
 					(length 2.54)
 					(name "DN"
 						(effects
@@ -2785,7 +2803,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at 2.54 29.21 270)
+					(at -2.54 29.21 270)
 					(length 2.54)
 					(name "DP"
 						(effects
@@ -4079,6 +4097,16 @@
 	)
 	(wire
 		(pts
+			(xy 128.27 119.38) (xy 128.27 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c75402e-fced-467b-9876-2e04264ab7fe")
+	)
+	(wire
+		(pts
 			(xy 92.71 158.75) (xy 92.71 146.05)
 		)
 		(stroke
@@ -4166,6 +4194,16 @@
 			(type default)
 		)
 		(uuid "5afe2e75-6126-4692-9605-080e16c7c861")
+	)
+	(wire
+		(pts
+			(xy 107.95 111.76) (xy 107.95 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b80ce72-3a25-436b-9dbd-d0e9a7d70b17")
 	)
 	(wire
 		(pts
@@ -4285,7 +4323,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "691095b6-c54b-4d69-b7e4-3f84b31f06f9")
+		(uuid "68217bbf-dab4-4b4f-9bdc-44b4066c5fa5")
 	)
 	(wire
 		(pts
@@ -4299,6 +4337,16 @@
 	)
 	(wire
 		(pts
+			(xy 97.79 109.22) (xy 97.79 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6cb114b5-710c-465a-89fb-1df1caef0bb6")
+	)
+	(wire
+		(pts
 			(xy 205.74 81.28) (xy 213.36 81.28)
 		)
 		(stroke
@@ -4306,16 +4354,6 @@
 			(type default)
 		)
 		(uuid "6e210bd1-51ae-4aca-a08e-58f922a32a45")
-	)
-	(wire
-		(pts
-			(xy 97.79 109.22) (xy 97.79 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6ee3dd57-5c83-46e2-91fa-a29fce64aec1")
 	)
 	(wire
 		(pts
@@ -4639,6 +4677,16 @@
 	)
 	(wire
 		(pts
+			(xy 118.11 116.84) (xy 118.11 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cac6e41-b41b-478a-92fd-ec71ea343c03")
+	)
+	(wire
+		(pts
 			(xy 77.47 96.52) (xy 138.43 96.52)
 		)
 		(stroke
@@ -4839,16 +4887,6 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 146.05) (xy 118.11 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b636b2f2-925b-48ed-850e-530fb8ebb0ab")
-	)
-	(wire
-		(pts
 			(xy 68.58 35.56) (xy 82.55 35.56)
 		)
 		(stroke
@@ -4986,16 +5024,6 @@
 			(type default)
 		)
 		(uuid "c45de8d5-2856-4ee6-b26b-d9131afac6e5")
-	)
-	(wire
-		(pts
-			(xy 128.27 146.05) (xy 128.27 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c671902a-aa08-4fc3-b913-bd9fe682d064")
 	)
 	(wire
 		(pts
@@ -5287,16 +5315,6 @@
 		)
 		(uuid "e8a978d3-ca78-46d9-954c-a6e0d149e3d9")
 	)
-	(wire
-		(pts
-			(xy 107.95 146.05) (xy 107.95 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eaf81a9f-5ac7-4ea2-889a-b2f332a5d84e")
-	)
 	(bus
 		(pts
 			(xy 110.49 161.29) (xy 120.65 161.29)
@@ -5463,6 +5481,17 @@
 		)
 		(uuid "2b1e35a9-2e36-4d80-ba32-effdbb1cd141")
 	)
+	(label "USB_DN"
+		(at 132.08 57.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2c783098-860f-4eda-83b1-7207d84041ac")
+	)
 	(label "BUTTONS2"
 		(at 102.87 158.75 90)
 		(fields_autoplaced yes)
@@ -5517,6 +5546,17 @@
 			(justify left bottom)
 		)
 		(uuid "e18816a8-85e8-4c60-b08f-a558f33213d4")
+	)
+	(label "USB_DP"
+		(at 134.62 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e3a6ea34-25a1-4133-ab93-4bf27a93a0ee")
 	)
 	(symbol
 		(lib_id "Device:C_Small")
@@ -8181,7 +8221,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_SPST")
-		(at 92.71 138.43 270)
+		(at 92.71 138.43 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8189,7 +8229,7 @@
 		(dnp no)
 		(uuid "63790159-b753-4cce-a0a3-4349808583b0")
 		(property "Reference" "SW2"
-			(at 89.916 136.398 0)
+			(at 95.504 140.462 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8198,7 +8238,7 @@
 			)
 		)
 		(property "Value" "SW_SPST"
-			(at 95.25 139.6999 90)
+			(at 90.17 137.1601 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9051,7 +9091,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_SPST")
-		(at 123.19 138.43 270)
+		(at 123.19 138.43 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9059,7 +9099,7 @@
 		(dnp no)
 		(uuid "8a525ef3-a7d8-4fb4-ab66-c719620b404b")
 		(property "Reference" "SW5"
-			(at 120.904 136.398 0)
+			(at 125.476 140.462 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9068,7 +9108,7 @@
 			)
 		)
 		(property "Value" "SW_SPST"
-			(at 125.73 139.6999 90)
+			(at 120.65 137.1601 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9445,7 +9485,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_SPST")
-		(at 113.03 138.43 270)
+		(at 113.03 138.43 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9453,7 +9493,7 @@
 		(dnp no)
 		(uuid "9d22e3c7-4e27-48bb-9dd3-00ef1e28cdaf")
 		(property "Reference" "SW4"
-			(at 110.744 136.398 0)
+			(at 115.316 140.462 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9462,7 +9502,7 @@
 			)
 		)
 		(property "Value" "SW_SPST"
-			(at 115.57 139.6999 90)
+			(at 110.49 137.1601 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9730,7 +9770,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_SPST")
-		(at 102.87 138.43 270)
+		(at 102.87 138.43 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9738,7 +9778,7 @@
 		(dnp no)
 		(uuid "a71c4341-7f2b-419b-8deb-e94ffce91653")
 		(property "Reference" "SW3"
-			(at 100.33 136.398 0)
+			(at 105.41 140.462 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9747,7 +9787,7 @@
 			)
 		)
 		(property "Value" "SW_SPST"
-			(at 105.41 139.6999 90)
+			(at 100.33 137.1601 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11755,7 +11795,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_SPST")
-		(at 81.28 138.43 270)
+		(at 81.28 138.43 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11763,7 +11803,7 @@
 		(dnp no)
 		(uuid "f9615c69-bc8a-4417-a5dc-899767045275")
 		(property "Reference" "SW1"
-			(at 77.978 135.89 0)
+			(at 84.582 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11772,7 +11812,7 @@
 			)
 		)
 		(property "Value" "SW_SPST"
-			(at 83.82 139.6999 90)
+			(at 78.74 137.1601 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11781,7 +11821,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "boombox:PTS645S_SMTR92_CNK"
+		(property "Footprint" "TestPoint:TestPoint_Pad_2.0x2.0mm"
 			(at 81.28 138.43 0)
 			(effects
 				(font
