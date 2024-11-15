@@ -4,3 +4,4 @@ hardware/*.bak
 hardware/fp-info-cache
 *.bak
 *.lck
+*_autosave*
