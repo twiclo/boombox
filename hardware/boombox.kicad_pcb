@@ -460,7 +460,7 @@
 	(footprint "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "0a498daa-8739-4834-9548-28cb62142573")
-		(at 159.9 45.82)
+		(at 57.428651 20.701301)
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C6"
@@ -1262,7 +1262,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "28ba72ac-c784-405e-8407-30f7f460e5db")
-		(at 149.1 47.05)
+		(at 46.628651 21.931301)
 		(descr "SOT, 3 Pin (https://www.jedec.org/system/files/docs/to-236h.pdf variant AB), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "D8"
@@ -1795,7 +1795,7 @@
 	(footprint "boombox:PTS645S_SMTR92_CNK"
 		(layer "F.Cu")
 		(uuid "33880a8c-555e-431a-bae7-9ea477080a87")
-		(at 148.537498 30.450001)
+		(at 44.528651 30.631301)
 		(tags "PTS645SH50SMTR92LFS ")
 		(property "Reference" "SW3"
 			(at 0 0 0)
@@ -2093,7 +2093,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "38535ad1-5a59-4d48-94fb-e40f8b15cf04")
-		(at 149.1 42.7)
+		(at 46.628651 17.581301)
 		(descr "SOT, 3 Pin (https://www.jedec.org/system/files/docs/to-236h.pdf variant AB), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "D7"
@@ -3433,7 +3433,7 @@
 	(footprint "boombox:PTS645S_SMTR92_CNK"
 		(layer "F.Cu")
 		(uuid "4e7856b6-6702-4b48-8496-abe769d1c6e8")
-		(at 159.037498 30.450001)
+		(at 56.566149 5.331302)
 		(tags "PTS645SH50SMTR92LFS ")
 		(property "Reference" "SW5"
 			(at 0 0 0)
@@ -3971,7 +3971,7 @@
 	(footprint "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "520d16f5-d22b-444c-adb0-8afc4adb75fa")
-		(at 162.9325 45.1)
+		(at 60.461151 19.981301)
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C8"
@@ -5873,7 +5873,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "75d4c764-6bea-4a70-9507-07a4397bd607")
-		(at 136.8 38.6)
+		(at 34.328651 13.481301)
 		(descr "SOT, 3 Pin (https://www.jedec.org/system/files/docs/to-236h.pdf variant AB), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "Q5"
@@ -10782,7 +10782,7 @@
 	(footprint "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "a3e36614-c9d1-4a29-8825-17ec61aeea6b")
-		(at 162.9325 47.07)
+		(at 60.461151 21.951301)
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C9"
@@ -11022,7 +11022,7 @@
 	(footprint "boombox:PTS645S_SMTR92_CNK"
 		(layer "F.Cu")
 		(uuid "a5e401c4-e2df-41df-a4f9-3b312684b9ce")
-		(at 137.808847 30.6187)
+		(at 31.478651 30.631301)
 		(tags "PTS645SH50SMTR92LFS ")
 		(property "Reference" "SW2"
 			(at 0 0 0)
@@ -12414,7 +12414,7 @@
 	(footprint "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "b5d93190-b823-4002-bc1d-aabd551f1c71")
-		(at 159.9 47.79)
+		(at 57.428651 22.671301)
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C7"
@@ -13132,7 +13132,7 @@
 	(footprint "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "b931a8b1-7b88-47c6-a276-b7a89e65cc9e")
-		(at 159.9 43.85)
+		(at 57.428651 18.731301)
 		(descr "Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C5"
@@ -14321,7 +14321,7 @@
 	(footprint "Package_TO_SOT_SMD:SOT-23"
 		(layer "F.Cu")
 		(uuid "da7be74c-09bb-4de4-b977-0cb88dec9a70")
-		(at 149.1125 38.5)
+		(at 46.641151 13.381301)
 		(descr "SOT, 3 Pin (https://www.jedec.org/system/files/docs/to-236h.pdf variant AB), generated with kicad-footprint-generator ipc_gullwing_generator.py")
 		(tags "SOT TO_SOT_SMD")
 		(property "Reference" "D6"
@@ -15058,7 +15058,7 @@
 	(footprint "boombox:PTS645S_SMTR92_CNK"
 		(layer "F.Cu")
 		(uuid "e9434ff5-83e3-47c2-8e67-a7c5b264a471")
-		(at 169.537498 30.450001)
+		(at 67.066149 5.331302)
 		(tags "PTS645SH50SMTR92LFS ")
 		(property "Reference" "SW4"
 			(at 0 0 0)
@@ -16118,7 +16118,7 @@
 	(footprint "TestPoint:TestPoint_Pad_2.0x2.0mm"
 		(layer "F.Cu")
 		(uuid "f2dffb08-d3ab-4a7a-bf71-ad8a1c164721")
-		(at 100.3 36.95)
+		(at -2.171349 11.831301)
 		(descr "SMD rectangular pad as test Point, square 2.0mm side length")
 		(tags "test point SMD pad rectangle square")
 		(property "Reference" "SW1"
@@ -22725,10 +22725,30 @@
 		(layer "F.SilkS")
 		(uuid "b6f66af7-c60b-4f27-bffa-551a67c584cd")
 	)
+	(gr_line
+		(start 153.9 46.3)
+		(end 153.9 66.3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "bdab0fa7-c973-4a98-9f6e-cb7a8a2930d8")
+	)
+	(gr_line
+		(start 91.4 56.3)
+		(end 216.4 56.3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "d6d1be0e-82c7-4736-8623-08073b056ca8")
+	)
 	(gr_arc
-		(start 119.95 64.95)
-		(mid 120.45 65.45)
-		(end 119.95 65.95)
+		(start 98.825 66.55)
+		(mid 99.325 67.05)
+		(end 98.825 67.55)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -22736,10 +22756,21 @@
 		(layer "Edge.Cuts")
 		(uuid "099f34e7-6f85-4f13-aaac-962c73377ced")
 	)
+	(gr_rect
+		(start 91.4 46.3)
+		(end 216.4 66.3)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill none)
+		(layer "Edge.Cuts")
+		(uuid "1b70c3f7-0b81-408c-978c-8e8643cd5d87")
+	)
 	(gr_arc
-		(start 114.1 65.95)
-		(mid 113.6 65.45)
-		(end 114.1 64.95)
+		(start 92.975 67.55)
+		(mid 92.475 67.05)
+		(end 92.975 66.55)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -22748,18 +22779,8 @@
 		(uuid "2c2ef28c-aded-412a-9c49-5be61a9d68f1")
 	)
 	(gr_line
-		(start 113.95 68.85)
-		(end 119.8 68.85)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "35ba775f-8b55-4a2a-8c26-3f0622c0fd2b")
-	)
-	(gr_line
-		(start 114.1 64.95)
-		(end 119.95 64.95)
+		(start 92.975 66.55)
+		(end 98.825 66.55)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -22768,8 +22789,8 @@
 		(uuid "456d4afd-6747-417e-882b-bb9754e35b92")
 	)
 	(gr_line
-		(start 114.1 65.95)
-		(end 119.95 65.95)
+		(start 92.975 67.55)
+		(end 98.825 67.55)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -22777,21 +22798,21 @@
 		(layer "Edge.Cuts")
 		(uuid "61d88bf6-0d11-4e32-b741-d2d0de3b4456")
 	)
-	(gr_arc
-		(start 113.95 68.85)
-		(mid 113.45 68.35)
-		(end 113.95 67.85)
+	(gr_rect
+		(start 91.4 66.3)
+		(end 216.4 67.8)
 		(stroke
 			(width 0.05)
 			(type default)
 		)
+		(fill none)
 		(layer "Edge.Cuts")
-		(uuid "970de480-ce59-4a5e-9cfc-8be486a38834")
+		(uuid "a6b5ae19-d9c4-40b1-9a4a-fcd941bf9952")
 	)
 	(gr_poly
 		(pts
 			(xy 201.4 120.95) (xy 204.125 120.95) (xy 204.125 132.05) (xy 201.4 132.05) (xy 201.4 137.8) (xy 106.4 137.8)
-			(xy 106.4 67.8) (xy 112.6 67.8) (xy 112.6 49.5) (xy 194.85 49.5) (xy 194.85 67.8) (xy 201.4 67.8)
+			(xy 106.4 67.8) (xy 112.6 67.8) (xy 117.15 67.8) (xy 179.4 67.8) (xy 194.85 67.8) (xy 201.4 67.8)
 		)
 		(stroke
 			(width 0.05)
@@ -22800,27 +22821,6 @@
 		(fill none)
 		(layer "Edge.Cuts")
 		(uuid "b555f65e-a725-435e-8f09-f3f6a55d1bcb")
-	)
-	(gr_line
-		(start 113.95 67.85)
-		(end 119.8 67.85)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "cbe30afa-c980-4928-8fbc-63d0709d8940")
-	)
-	(gr_arc
-		(start 119.8 67.85)
-		(mid 120.3 68.35)
-		(end 119.8 68.85)
-		(stroke
-			(width 0.05)
-			(type default)
-		)
-		(layer "Edge.Cuts")
-		(uuid "ec42df33-762a-44a5-acb1-47b1e17bfec1")
 	)
 	(gr_rect
 		(start 191.9 94.55)
@@ -25592,16 +25592,16 @@
 		(uuid "fc000d78-cadc-4b58-b305-ec9179bda8b9")
 	)
 	(segment
-		(start 150.0375 47.05)
-		(end 150.0375 42.7)
+		(start 47.566151 21.931301)
+		(end 47.566151 17.581301)
 		(width 0.6)
 		(layer "F.Cu")
 		(net 23)
 		(uuid "11b21e59-0072-48ae-848f-3b9f3d21bf37")
 	)
 	(segment
-		(start 150.0375 42.7)
-		(end 150.0375 38.5125)
+		(start 47.566151 17.581301)
+		(end 47.566151 13.393801)
 		(width 0.6)
 		(layer "F.Cu")
 		(net 23)
@@ -25616,8 +25616,8 @@
 		(uuid "5c3d248d-ee1e-4609-9270-d11c5b36c02c")
 	)
 	(segment
-		(start 150.0375 38.5125)
-		(end 150.05 38.5)
+		(start 47.566151 13.393801)
+		(end 47.578651 13.381301)
 		(width 0.6)
 		(layer "F.Cu")
 		(net 23)
