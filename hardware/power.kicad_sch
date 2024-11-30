@@ -1694,12 +1694,6 @@
 		(uuid "1b8d6671-a26f-47f3-888e-7beb6b310d6d")
 	)
 	(junction
-		(at 156.21 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "288be789-e9b5-465f-8549-18d3c94a7366")
-	)
-	(junction
 		(at 166.37 29.21)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1730,12 +1724,6 @@
 		(uuid "58430b09-c478-4064-ac8f-40cbccd729f6")
 	)
 	(junction
-		(at 148.59 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "63d4fdbf-34de-42be-8de5-21930f62627d")
-	)
-	(junction
 		(at 64.77 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1748,16 +1736,22 @@
 		(uuid "6a7079ad-76bd-4311-b393-2f7830847a5e")
 	)
 	(junction
+		(at 152.4 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7017a261-e64a-4feb-969b-29b8237169ae")
+	)
+	(junction
+		(at 144.78 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "82073e1c-a0df-461e-97dd-44610ec7efa9")
+	)
+	(junction
 		(at 170.18 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "85453e7b-d9d4-4836-896a-38cc9dac03bd")
-	)
-	(junction
-		(at 160.02 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "89553fc7-a87a-4750-a236-e3c801f9655b")
 	)
 	(junction
 		(at 76.2 77.47)
@@ -1814,16 +1808,22 @@
 		(uuid "b738355c-d064-48e8-804f-881568f21628")
 	)
 	(junction
-		(at 144.78 74.93)
+		(at 160.02 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c561f1ab-aeb6-463b-8468-574679956f2a")
+		(uuid "b946dc46-3aa6-4416-82c7-1c49aece7816")
 	)
 	(junction
 		(at 109.22 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cbcf400b-41ee-457a-b683-b4a66d2bc0c2")
+	)
+	(junction
+		(at 148.59 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d8e931c0-b3ee-44dc-bbc9-89b8c4beaefa")
 	)
 	(junction
 		(at 191.77 69.85)
@@ -1856,16 +1856,16 @@
 		(uuid "f556e37f-f39b-48dc-adc9-70fa52fc2c43")
 	)
 	(junction
-		(at 152.4 74.93)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f7a4d445-351b-49bd-8f0d-a45e46d43dcb")
-	)
-	(junction
 		(at 133.35 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fb481bf9-4487-44f2-b7f6-cc35e1396789")
+	)
+	(junction
+		(at 156.21 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fd54c42b-41a6-41af-9a7e-d0d31035cab2")
 	)
 	(no_connect
 		(at 129.54 152.4)
@@ -2025,7 +2025,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 82.55) (xy 148.59 96.52)
+			(xy 148.59 74.93) (xy 148.59 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2073,16 +2073,6 @@
 		)
 		(uuid "1b831825-555b-4392-b4aa-e2015bcc8e41")
 	)
-	(wire
-		(pts
-			(xy 152.4 74.93) (xy 156.21 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1da409a9-d187-4956-a52a-aa1e314ed647")
-	)
 	(bus
 		(pts
 			(xy 162.56 99.06) (xy 158.75 99.06)
@@ -2095,7 +2085,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 82.55) (xy 156.21 96.52)
+			(xy 156.21 74.93) (xy 156.21 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2175,23 +2165,13 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 82.55) (xy 152.4 96.52)
+			(xy 152.4 74.93) (xy 152.4 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2f655864-2fbb-4aa0-98d2-09f8344aff53")
-	)
-	(wire
-		(pts
-			(xy 160.02 82.55) (xy 160.02 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3155dfd9-87c6-46e8-b2a9-032fea33774c")
 	)
 	(wire
 		(pts
@@ -2215,6 +2195,16 @@
 	)
 	(wire
 		(pts
+			(xy 152.4 74.93) (xy 156.21 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ae90467-1a93-4ece-a05d-4d626050a00a")
+	)
+	(wire
+		(pts
 			(xy 39.37 82.55) (xy 50.8 82.55)
 		)
 		(stroke
@@ -2222,6 +2212,16 @@
 			(type default)
 		)
 		(uuid "3b7afa13-a5d9-4e33-891c-47a8256b1340")
+	)
+	(wire
+		(pts
+			(xy 160.02 74.93) (xy 162.56 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f18d324-08f6-4263-9cb8-4306c3affc4c")
 	)
 	(wire
 		(pts
@@ -2275,13 +2275,13 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 74.93) (xy 152.4 74.93)
+			(xy 160.02 74.93) (xy 160.02 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4d9a32cc-a52a-4371-9967-59da9d358c86")
+		(uuid "4d156d32-7c07-4b27-9180-d36cfd6e207f")
 	)
 	(wire
 		(pts
@@ -2355,6 +2355,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 74.93) (xy 152.4 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65e1e089-cac3-45f3-80d9-e6c185084563")
+	)
+	(wire
+		(pts
 			(xy 60.96 38.1) (xy 60.96 55.88)
 		)
 		(stroke
@@ -2395,6 +2405,16 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 74.93) (xy 160.02 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ac9c29e-ddc1-45f3-8787-e15006ee3130")
+	)
+	(wire
+		(pts
 			(xy 149.86 29.21) (xy 152.4 29.21)
 		)
 		(stroke
@@ -2412,16 +2432,6 @@
 			(type default)
 		)
 		(uuid "6e159ad9-f80f-45b2-b4e2-ee42b4427389")
-	)
-	(wire
-		(pts
-			(xy 144.78 74.93) (xy 148.59 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7793c1f3-95ae-42a7-bd9e-4b6226264ad5")
 	)
 	(wire
 		(pts
@@ -2645,6 +2655,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 74.93) (xy 148.59 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c00d00c6-a082-42f9-b0ba-73f3e45b2570")
+	)
+	(wire
+		(pts
 			(xy 53.34 63.5) (xy 57.15 63.5)
 		)
 		(stroke
@@ -2692,16 +2712,6 @@
 			(type default)
 		)
 		(uuid "ccb43f5a-96b5-4a66-823e-2b5ffaedb4e9")
-	)
-	(wire
-		(pts
-			(xy 160.02 74.93) (xy 162.56 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ccc39cb3-86cd-4886-a015-9a418cc14ffe")
 	)
 	(wire
 		(pts
@@ -2775,6 +2785,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 74.93) (xy 144.78 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcec0889-ad01-4c46-a0e3-495c721c152a")
+	)
+	(wire
+		(pts
 			(xy 53.34 38.1) (xy 53.34 55.88)
 		)
 		(stroke
@@ -2782,16 +2802,6 @@
 			(type default)
 		)
 		(uuid "ddc6a4c0-f654-4b3b-9039-6d3e3d366d5b")
-	)
-	(wire
-		(pts
-			(xy 156.21 74.93) (xy 160.02 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "df009db4-9353-424e-8371-8f47a839f013")
 	)
 	(wire
 		(pts
@@ -2832,16 +2842,6 @@
 			(type default)
 		)
 		(uuid "e6bf45b6-3753-402c-bded-491fcbcb7a20")
-	)
-	(wire
-		(pts
-			(xy 144.78 82.55) (xy 144.78 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e836d526-c12f-498f-8e3f-1d1297544af8")
 	)
 	(wire
 		(pts
@@ -4266,97 +4266,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
-		(at 152.4 78.74 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7a4b5427-7328-4ce8-b939-09a58bfb01da")
-		(property "Reference" "D7"
-			(at 150.622 73.406 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Dual_CommonCathode_AAK_Split"
-			(at 137.668 85.09 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 154.94 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
-			(at 154.94 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual diode, common cathode on pin 1"
-			(at 152.4 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 152.4 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 152.4 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "fdc9b2e9-8466-4826-9bfb-44a1e426d0e4")
-		)
-		(pin "1"
-			(uuid "7ef2076d-e78d-424b-ab93-e94a8ee704a1")
-		)
-		(pin "3"
-			(uuid "79406310-ca29-46c1-b303-58b20f278b78")
-		)
-		(instances
-			(project "boombox"
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 213.36 33.02 0)
 		(unit 1)
@@ -4507,97 +4416,6 @@
 			(project "boombox"
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "D2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
-		(at 160.02 78.74 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "81cc314d-367e-4d2f-8f3e-9e1fc076e0ce")
-		(property "Reference" "D8"
-			(at 158.242 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Dual_CommonCathode_AAK_Split"
-			(at 141.732 84.074 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 162.56 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
-			(at 162.56 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual diode, common cathode on pin 1"
-			(at 160.02 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 160.02 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 160.02 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "fdc9b2e9-8466-4826-9bfb-44a1e426d0e7")
-		)
-		(pin "1"
-			(uuid "723cdff4-efcb-408b-a700-e7c01c809122")
-		)
-		(pin "3"
-			(uuid "f3dbd196-e9e8-4040-9ae2-d8e13b1e82d7")
-		)
-		(instances
-			(project "boombox"
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -4776,97 +4594,6 @@
 			(project "boombox"
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "Q7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
-		(at 144.78 78.74 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9cd0e12b-34c1-4a05-98df-7582b84aad43")
-		(property "Reference" "D6"
-			(at 143.002 73.406 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Dual_CommonCathode_AAK_Split"
-			(at 128.524 84.328 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 147.32 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
-			(at 147.32 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual diode, common cathode on pin 1"
-			(at 144.78 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 144.78 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 144.78 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "fdc9b2e9-8466-4826-9bfb-44a1e426d0e8")
-		)
-		(pin "1"
-			(uuid "7a2d42e1-d406-4b67-bf4d-554714a13224")
-		)
-		(pin "3"
-			(uuid "8738a709-ea28-4b08-92d0-6d7d85a792fc")
-		)
-		(instances
-			(project ""
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D6")
 					(unit 1)
 				)
 			)
@@ -5204,97 +4931,6 @@
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "J3")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
-		(at 156.21 78.74 90)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a96a1336-2fe1-432e-9e9d-3f5ff05532a3")
-		(property "Reference" "D7"
-			(at 154.178 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Dual_CommonCathode_AAK_Split"
-			(at 142.24 84.328 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 158.75 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
-			(at 158.75 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual diode, common cathode on pin 1"
-			(at 156.21 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 156.21 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 156.21 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "65e5861e-72c5-4d3a-b05a-9a6909a66e7f")
-		)
-		(pin "1"
-			(uuid "7a2d42e1-d406-4b67-bf4d-554714a13225")
-		)
-		(pin "3"
-			(uuid "774bb6dd-183d-469b-93b9-fde686c09e60")
-		)
-		(instances
-			(project "boombox"
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D7")
-					(unit 2)
 				)
 			)
 		)
@@ -5904,97 +5540,6 @@
 			(project "boombox"
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "D2")
-					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Dual_CommonCathode_AAK_Split")
-		(at 148.59 78.74 90)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "cd637a00-b864-4f34-b6fe-7c1ef89e91f0")
-		(property "Reference" "D6"
-			(at 146.812 73.66 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D_Dual_CommonCathode_AAK_Split"
-			(at 138.43 84.836 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 151.13 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "${KIPRJMOD}/datasheets/diode.pdf"
-			(at 151.13 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual diode, common cathode on pin 1"
-			(at 148.59 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 148.59 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 148.59 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "fdc9b2e9-8466-4826-9bfb-44a1e426d0e9")
-		)
-		(pin "1"
-			(uuid "7a2d42e1-d406-4b67-bf4d-554714a13229")
-		)
-		(pin "3"
-			(uuid "8738a709-ea28-4b08-92d0-6d7d85a792fd")
-		)
-		(instances
-			(project ""
-				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
-					(reference "D6")
 					(unit 2)
 				)
 			)
