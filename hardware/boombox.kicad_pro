@@ -74,8 +74,6 @@
         "hole_clearance|201125000|99075000|569a99bd-a09d-4724-a980-41d93c0abbd0|670b1646-d0e1-44f3-9e17-34518fbdef4d",
         "hole_clearance|201125000|99275000|569a99bd-a09d-4724-a980-41d93c0abbd0|0d86355a-e06a-48ff-bef9-cd221e11bd7b",
         "hole_clearance|201125000|99275000|569a99bd-a09d-4724-a980-41d93c0abbd0|df5e5ec0-862e-4d42-b23f-4f20768010ed",
-        "silk_over_copper|123564500|109538326|9413ecae-9dd6-4ea2-9f0b-048f22af4b0d|00000000-0000-0000-0000-000000000000",
-        "silk_over_copper|161500000|110300000|09f4439f-4f62-424e-ab39-436d4fd3a0eb|00000000-0000-0000-0000-000000000000",
         "silk_over_copper|172825000|110300000|b6f66af7-c60b-4f27-bffa-551a67c584cd|00000000-0000-0000-0000-000000000000",
         "solder_mask_bridge|124744400|73220000|1f2d2eb2-583a-46eb-af9f-1495d720aa19|3f17f46b-6044-4b69-b975-b14a8f9c2abb"
       ],
@@ -150,7 +148,7 @@
         "min_through_hole_diameter": 0.3,
         "min_track_width": 0.0,
         "min_via_annular_width": 0.05,
-        "min_via_diameter": 0.4,
+        "min_via_diameter": 0.45,
         "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
@@ -530,7 +528,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "export/daughter/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -541,7 +539,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "",
+    "bom_export_filename": "bom.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -620,6 +618,36 @@
           "group_by": false,
           "label": "Description",
           "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Mouser Part Number",
+          "name": "Mouser Part Number",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Mouser Price/Stock",
+          "name": "Mouser Price/Stock",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Height",
+          "name": "Height",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer_Name",
+          "name": "Manufacturer_Name",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer_Part_Number",
+          "name": "Manufacturer_Part_Number",
           "show": false
         }
       ],

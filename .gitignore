@@ -2,6 +2,7 @@ build
 hardware/*backup*
 hardware/*.bak
 hardware/fp-info-cache
+hardware/export
 *.bak
 *.lck
 *_autosave*

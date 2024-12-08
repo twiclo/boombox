@@ -2837,7 +2837,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3.3M"
+		(property "Value" "1M"
 			(at 210.82 66.0399 0)
 			(effects
 				(font
@@ -5553,7 +5553,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3.3M"
+		(property "Value" "1M"
 			(at 238.76 66.0399 0)
 			(effects
 				(font
