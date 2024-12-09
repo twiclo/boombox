@@ -10,6 +10,22 @@
 // Move the hardware stuff to its own file
 #include "hw_config.h"
 
+typedef struct __attribute((packed)) {
+	char riff_id[4];
+	uint32_t filesize;
+	char filetype[4];
+	char chunk_mark[4];
+	uint32_t chunk_size;
+	uint16_t format_type;
+	uint16_t channels;
+	uint32_t sample_rate;
+	uint32_t bits_per_sec;
+	uint16_t junk;
+	uint16_t bits_per_sample;
+	char data_header[4];
+	uint32_t data_size;
+} WaveHeader;
+
 // Hardware Configuration of SPI "objects"
 // Note: multiple SD cards can be driven by one SPI if they use different slave
 // selects.
@@ -55,22 +71,24 @@ spi_t *spi_get_by_num(size_t num) {
 int main() {
 	FRESULT fr;
 	FATFS fs;
-	FIL fil;
-	char buf[100];
+	FIL file;
+	/* char buf[100]; */
 	/* char filename[] = "test.txt"; */
 	char full_path[50];
 
 	char cart_path[12];
 	DIR cart_dir;
-	FILINFO file;
+	FILINFO file_info;
 	uint32_t selection = 0;
 	uint32_t btn_gpios[] = {2, 3, 4};
+	WaveHeader header;
 
 	cyw43_arch_init();
 	stdio_init_all();
 
 	printf("\r\nSD card test. Press 'enter' to start.\r\n");
 	while (true) {
+		char buf[2];
 		buf[0] = getchar();
 		if ((buf[0] == '\r') || (buf[0] == '\n')) {
 			break;
@@ -126,14 +144,14 @@ int main() {
 			printf("Opened up dir: %s\r\n", cart_path);
 		}
 
-		fr = f_readdir(&cart_dir, &file);
-		printf("Filename: %s\n", &file.fname);
+		fr = f_readdir(&cart_dir, &file_info);
+		printf("Filename: %s\n", &file_info.fname);
 
 		// Open file for reading
 		printf("Opening file\n");
-		sprintf(full_path, "cartridge%d/track1/%s", selection, file.fname);
+		sprintf(full_path, "cartridge%d/track1/%s", selection, file_info.fname);
 		printf("Full path: %s\n", full_path);
-		fr = f_open(&fil, full_path, FA_READ);
+		fr = f_open(&file, full_path, FA_READ);
 		if (fr != FR_OK) {
 			printf("ERROR: Could not open file (%s)\r\n", fr);
 			cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
@@ -143,13 +161,39 @@ int main() {
 		// Print every line in file over serial
 		printf("Reading from file '%s':\r\n", full_path);
 		printf("---\r\n");
-		while (f_gets(buf, sizeof(buf), &fil)) {
-			printf(buf);
+		f_gets((char*)&header, sizeof(header), &file);
+		/* char riff_id[4]; */
+		/* 	uint32_t filesize; */
+		/* 	char filetype[4]; */
+		/* 	char chunk_mark[4]; */
+		/* 	uint32_t chunk_size; */
+		/* 	uint16_t format_type; */
+		/* 	uint16_t channels; */
+		/* 	uint32_t sample_rate; */
+		/* 	uint32_t bits_per_sec; */
+		/* 	uint16_t junk; */
+		/* 	uint16_t bits_per_sample; */
+		/* 	char data_header[4]; */
+		/* 	uint32_t data_size; */
+		/* } */ 
+
+		printf("Channels: %d\n", header.channels);
+		printf("Channels: %d\n", header.channels);
+		printf("Channels: %d\n", header.channels);
+		printf("Channels: %d\n", header.channels);
+		printf("Channels: %d\n", header.channels);
+		printf("%s\n%d\n%d\n%d\n%d\n", header.chunk_mark, header.chunk_size, header.format_type, header.channels, header.sample_rate);
+		if (
+			strncmp(header.riff_id, "RIFF", 4) == 0 &&
+			strncmp(header.filetype, "WAVE", 4) == 0 &&
+			header.channels == 2
+		) {
+			printf("Valid wave file\n");
 		}
 
 		// Close file
 		printf("Closing file\n");
-		fr = f_close(&fil);
+		fr = f_close(&file);
 		if (fr != FR_OK) {
 			printf("ERROR: Could not close file (%d)\r\n", fr);
 			cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
