@@ -2,6 +2,7 @@
 #include "my_debug.h"
 #include "hw_config.h"
 #include "ff.h" /* Obtains integer types */
+#include "ff_stdio.h" /* Obtains integer types */
 #include "diskio.h" /* Declarations of disk functions */
 #include "pico/stdlib.h"
 #include "pico/cyw43_arch.h"
@@ -10,7 +11,7 @@
 // Move the hardware stuff to its own file
 #include "hw_config.h"
 
-typedef struct __attribute((packed)) {
+typedef struct __attribute__((packed)) {
 	char riff_id[4];
 	uint32_t filesize;
 	char filetype[4];
@@ -20,7 +21,7 @@ typedef struct __attribute((packed)) {
 	uint16_t channels;
 	uint32_t sample_rate;
 	uint32_t bits_per_sec;
-	uint16_t junk;
+	uint16_t block_align;
 	uint16_t bits_per_sample;
 	char data_header[4];
 	uint32_t data_size;
@@ -161,7 +162,9 @@ int main() {
 		// Print every line in file over serial
 		printf("Reading from file '%s':\r\n", full_path);
 		printf("---\r\n");
-		f_gets((char*)&header, sizeof(header), &file);
+		uint32_t res;
+		ff_fread(&header, sizeof(WaveHeader), 1, &file);
+		printf("%d\n", res);
 		/* char riff_id[4]; */
 		/* 	uint32_t filesize; */
 		/* 	char filetype[4]; */
@@ -171,18 +174,19 @@ int main() {
 		/* 	uint16_t channels; */
 		/* 	uint32_t sample_rate; */
 		/* 	uint32_t bits_per_sec; */
-		/* 	uint16_t junk; */
+		/* 	uint16_t block_align; */
 		/* 	uint16_t bits_per_sample; */
 		/* 	char data_header[4]; */
 		/* 	uint32_t data_size; */
 		/* } */ 
 
+		printf("RIFF ID: %.4s\n", header.riff_id);
+		printf("File size: %d\n", header.filesize);
+		printf("File type: %.4s\n", header.filetype);
+		printf("Chunk mark: %.4s\n", header.chunk_mark);
+		printf("Chunk size: %d\n", header.chunk_size);
 		printf("Channels: %d\n", header.channels);
-		printf("Channels: %d\n", header.channels);
-		printf("Channels: %d\n", header.channels);
-		printf("Channels: %d\n", header.channels);
-		printf("Channels: %d\n", header.channels);
-		printf("%s\n%d\n%d\n%d\n%d\n", header.chunk_mark, header.chunk_size, header.format_type, header.channels, header.sample_rate);
+
 		if (
 			strncmp(header.riff_id, "RIFF", 4) == 0 &&
 			strncmp(header.filetype, "WAVE", 4) == 0 &&
