@@ -5,6 +5,9 @@
 #include "diskio.h" /* Declarations of disk functions */
 #include "pico/stdlib.h"
 #include "pico/cyw43_arch.h"
+
+// TODO
+// Move the hardware stuff to its own file
 #include "hw_config.h"
 
 // Hardware Configuration of SPI "objects"
@@ -54,8 +57,12 @@ int main() {
 	FATFS fs;
 	FIL fil;
 	char buf[100];
-	char filename[] = "test.txt";
+	/* char filename[] = "test.txt"; */
+	char full_path[50];
 
+	char cart_path[12];
+	DIR cart_dir;
+	FILINFO file;
 	uint32_t selection = 0;
 	uint32_t btn_gpios[] = {2, 3, 4};
 
@@ -85,48 +92,72 @@ int main() {
 		while (true);
 	}
 
-	// Open file for reading
-	printf("Opening file");
-	fr = f_open(&fil, filename, FA_READ);
-	if (fr != FR_OK) {
-		printf("ERROR: Could not open file (%d)\r\n", fr);
-		cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-		while (true);
-	}
-
-	// Print every line in file over serial
-	printf("Reading from file '%s':\r\n", filename);
-	printf("---\r\n");
-	while (f_gets(buf, sizeof(buf), &fil)) {
-		printf(buf);
-	}
 	printf("\r\n---\r\n");
 
-	// Close file
-	printf("Closing file\n");
-	fr = f_close(&fil);
-	if (fr != FR_OK) {
-		printf("ERROR: Could not close file (%d)\r\n", fr);
-		cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-		while (true);
-	}
 
-	// Unmount drive
-	printf("Unmounting drive\n");
-	f_unmount("0:");
+	/* // Unmount drive */
+	/* printf("Unmounting drive\n"); */
+	/* f_unmount("0:"); */
 
 	for(uint32_t i = 0; i < sizeof(btn_gpios) / sizeof(btn_gpios[0]); i++) {
 		gpio_init(btn_gpios[i]);
 		gpio_set_dir(i, GPIO_IN);
+		gpio_pull_down(btn_gpios[i]);
 	}
 
 	while (true) {
-		for(uint32_t i = 0; i < sizeof(btn_gpios) / sizeof(btn_gpios[0]); i++) {
-			selection <<= 1;
-			selection |= gpio_get(btn_gpios[i]);
+		selection = 0;
+		cart_path[0] = '\0';
+
+		while (selection == 0) {
+			for(uint32_t i = 0; i < sizeof(btn_gpios) / sizeof(btn_gpios[0]); i++) {
+				selection <<= 1;
+				selection |= gpio_get(btn_gpios[i]);
+			}
 		}
-		printf("%d", selection);
-		/* sleep_ms(250); */
+
+		// Open cartridge dir to find the first file
+		sprintf(cart_path, "cartridge%d/track1", selection);
+		printf("Cart path: %s\n", cart_path);
+		fr = f_opendir(&cart_dir, cart_path);
+		if (fr != FR_OK) {
+			printf("ERROR: Could not open directory %s\r\n", cart_path);
+		} else {
+			printf("Opened up dir: %s\r\n", cart_path);
+		}
+
+		fr = f_readdir(&cart_dir, &file);
+		printf("Filename: %s\n", &file.fname);
+
+		// Open file for reading
+		printf("Opening file\n");
+		sprintf(full_path, "cartridge%d/track1/%s", selection, file.fname);
+		printf("Full path: %s\n", full_path);
+		fr = f_open(&fil, full_path, FA_READ);
+		if (fr != FR_OK) {
+			printf("ERROR: Could not open file (%s)\r\n", fr);
+			cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
+			while (true);
+		}
+
+		// Print every line in file over serial
+		printf("Reading from file '%s':\r\n", full_path);
+		printf("---\r\n");
+		while (f_gets(buf, sizeof(buf), &fil)) {
+			printf(buf);
+		}
+
+		// Close file
+		printf("Closing file\n");
+		fr = f_close(&fil);
+		if (fr != FR_OK) {
+			printf("ERROR: Could not close file (%d)\r\n", fr);
+			cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
+			while (true);
+		}
+
+		printf("%d\n", selection);
+		sleep_ms(100);
 
 		/* cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1); */
 		/* printf("1"); */
