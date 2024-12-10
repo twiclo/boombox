@@ -1,15 +1,9 @@
 #include <string.h>
-#include "my_debug.h"
-#include "hw_config.h"
 #include "ff.h" /* Obtains integer types */
 #include "ff_stdio.h" /* Obtains integer types */
 #include "diskio.h" /* Declarations of disk functions */
 #include "pico/stdlib.h"
 #include "pico/cyw43_arch.h"
-
-// TODO
-// Move the hardware stuff to its own file
-#include "hw_config.h"
 
 typedef struct __attribute__((packed)) {
 	char riff_id[4];
@@ -27,54 +21,10 @@ typedef struct __attribute__((packed)) {
 	uint32_t data_size;
 } WaveHeader;
 
-// Hardware Configuration of SPI "objects"
-// Note: multiple SD cards can be driven by one SPI if they use different slave
-// selects.
-static spi_t spis[] = {  // One for each SPI.
-	{
-		.hw_inst = spi1,  // SPI component
-		.miso_gpio = 12, // GPIO number (not pin number)
-		.mosi_gpio = 15,
-		.sck_gpio = 14,
-		.baud_rate = 12500 * 1000,  
-	}
-};
-
-// Hardware Configuration of the SD Card "objects"
-static sd_card_t sd_cards[] = {  // One for each SD card
-	{
-		.pcName = "0:",   // Name used to mount device
-		.spi = &spis[0],  // Pointer to the SPI driving this card
-		.ss_gpio = 9,    // The SPI slave select GPIO for this SD card
-		.use_card_detect = false,
-		/* .card_detect_gpio = 13,   // Card detect */
-		.card_detected_true = -1  // What the GPIO read returns when a card is
-														 // present. Use -1 if there is no card detect.
-	}};
-
-size_t sd_get_num() { return count_of(sd_cards); }
-sd_card_t *sd_get_by_num(size_t num) {
-	if (num <= sd_get_num()) {
-		return &sd_cards[num];
-	} else {
-		return NULL;
-	}
-}
-size_t spi_get_num() { return count_of(spis); }
-spi_t *spi_get_by_num(size_t num) {
-	if (num <= sd_get_num()) {
-		return &spis[num];
-	} else {
-		return NULL;
-	}
-}
-
 int main() {
 	FRESULT fr;
 	FATFS fs;
 	FIL file;
-	/* char buf[100]; */
-	/* char filename[] = "test.txt"; */
 	char full_path[50];
 
 	char cart_path[12];
@@ -96,12 +46,6 @@ int main() {
 		}
 	}
 
-	printf("Initialize SD card driver\n");
-	if (!sd_init_driver()) {
-		printf("ERROR: Could not initialize SD card\n");
-		cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-	}
-
 	// Mount drive
 	printf("Mounting drive\n");
 	fr = f_mount(&fs, "0:", 1);
@@ -112,11 +56,6 @@ int main() {
 	}
 
 	printf("\r\n---\r\n");
-
-
-	/* // Unmount drive */
-	/* printf("Unmounting drive\n"); */
-	/* f_unmount("0:"); */
 
 	for(uint32_t i = 0; i < sizeof(btn_gpios) / sizeof(btn_gpios[0]); i++) {
 		gpio_init(btn_gpios[i]);
@@ -165,20 +104,6 @@ int main() {
 		uint32_t res;
 		ff_fread(&header, sizeof(WaveHeader), 1, &file);
 		printf("%d\n", res);
-		/* char riff_id[4]; */
-		/* 	uint32_t filesize; */
-		/* 	char filetype[4]; */
-		/* 	char chunk_mark[4]; */
-		/* 	uint32_t chunk_size; */
-		/* 	uint16_t format_type; */
-		/* 	uint16_t channels; */
-		/* 	uint32_t sample_rate; */
-		/* 	uint32_t bits_per_sec; */
-		/* 	uint16_t block_align; */
-		/* 	uint16_t bits_per_sample; */
-		/* 	char data_header[4]; */
-		/* 	uint32_t data_size; */
-		/* } */ 
 
 		printf("RIFF ID: %.4s\n", header.riff_id);
 		printf("File size: %d\n", header.filesize);
@@ -193,6 +118,19 @@ int main() {
 			header.channels == 2
 		) {
 			printf("Valid wave file\n");
+		} else {
+			printf("Not a wave file\n");
+		}
+
+		uint8_t bytes_per_sample = header.bits_per_sample / 8;
+		for (uint32_t i = 0; i < header.data_size / bytes_per_sample; i++) {
+			uint32_t acc_chans = 0;
+			for (uint32_t j = 0; j < header.channels; j++) {
+				uint32_t sample;
+				ff_fread(&sample, bytes_per_sample, 1, &file);
+				acc_chans += sample;
+			}
+			acc_chans /= header.channels;
 		}
 
 		// Close file
