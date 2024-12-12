@@ -4613,16 +4613,16 @@
 	)
 	(symbol
 		(lib_id "boombox:DMN2310U-7")
-		(at 193.04 74.93 180)
+		(at 193.04 74.93 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "a7f5b749-ebd6-44c6-9944-857ea604b2ce")
 		(property "Reference" "Q6"
-			(at 187.96 74.2949 0)
+			(at 187.96 75.5651 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4631,7 +4631,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 187.96 76.2 0)
+			(at 187.96 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4640,7 +4640,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 191.77 60.452 0)
+			(at 191.77 89.408 0)
 			(effects
 				(font
 					(size 1.27 1.27)
