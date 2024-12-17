@@ -7,7 +7,8 @@ pico_sdk_init()
 
 add_executable(boombox src/main.c src/hw_config.c)
 add_subdirectory(lib/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI build_fatfs)
-target_link_libraries(boombox pico_stdlib pico_cyw43_arch_none FatFs_SPI hardware_i2c)
+pico_generate_pio_header(boombox ${CMAKE_CURRENT_LIST_DIR}/src/audio_i2s.pio)
+target_link_libraries(boombox pico_stdlib pico_cyw43_arch_none FatFs_SPI hardware_i2c hardware_pio hardware_clocks)
 
 # add_executable(boombox src/main.c src/hw_config.c)
 # add_subdirectory(lib/no-OS-FatFS-SD-SPI-RPi-Pico/FatFs_SPI build)

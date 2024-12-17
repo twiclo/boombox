@@ -4,7 +4,10 @@
 #include "diskio.h" /* Declarations of disk functions */
 #include "pico/stdlib.h"
 #include "pico/cyw43_arch.h"
+#include "hardware/clocks.h"
 #include "hardware/i2c.h"
+#include "hardware/pio.h"
+#include "audio_i2s.pio.h"
 
 typedef struct __attribute__((packed)) {
 	char riff_id[4];
@@ -18,11 +21,23 @@ typedef struct __attribute__((packed)) {
 	uint32_t bits_per_sec;
 	uint16_t block_align;
 	uint16_t bits_per_sample;
+	uint8_t padding[34];
 	char data_header[4];
 	uint32_t data_size;
 } WaveHeader;
 
+const static uint32_t SPKR_EN = 3;
+const static uint32_t I2S_BCLOCK = 20;
+const static uint32_t I2S_LRCLK = 21;
+const static uint32_t I2S_DATA = 22;
+
+const static uint32_t AUX_EN = 28;
+
 int main() {
+	PIO pio;
+	uint sm;
+	uint offset;
+
 	FRESULT fr;
 	FATFS fs;
 	FIL file;
@@ -61,10 +76,30 @@ int main() {
 		sleep_ms(100);
 	}
 
-	printf("Init DAC\n");
-	gpio_init(3);
-	gpio_set_dir(1, GPIO_OUT);
-	gpio_pull_up(3);
+	printf("Init AUX\n");
+	gpio_init(AUX_EN);
+	gpio_set_dir(AUX_EN, GPIO_OUT);
+	gpio_put(AUX_EN, 0);
+
+	printf("Init SPK\n");
+	gpio_init(SPKR_EN);
+	gpio_set_dir(SPKR_EN, GPIO_OUT);
+	gpio_put(SPKR_EN, 1);
+	sleep_ms(1000);
+
+	//gpio_set_function(I2S_BCLOCK, GPIO_FUNC_PIO0);
+	//gpio_set_function(I2S_LRCLK, GPIO_FUNC_PIO0);
+	//gpio_set_function(I2S_DATA, GPIO_FUNC_PIO0);
+
+	bool init_sm = pio_claim_free_sm_and_add_program(&audio_i2s_program, &pio, &sm, &offset);
+	if (!init_sm) {
+		printf("Failed to get sm\n");
+		gpio_put(1, 1);
+		while(true);
+	}
+
+	audio_i2s_program_init(pio, sm, offset, I2S_DATA, I2S_BCLOCK);
+	pio_sm_set_enabled(pio, sm, true);
 	printf("Done\n");
 
 	// SD Card detect testing
@@ -82,7 +117,6 @@ int main() {
 	gpio_set_function(4, GPIO_FUNC_I2C);
 	gpio_set_function(5, GPIO_FUNC_I2C);
 
-	printf("Done. Reading from it\n");
 	uint8_t rxdata;
 	uint8_t data[] = { 0x0, 0x80 };
 
@@ -92,38 +126,39 @@ int main() {
 	printf("%d\n", ret);
 	printf("%d\n", PICO_ERROR_GENERIC);
 
-	while(true) {
-		sleep_ms(250);
-		uint8_t reg = 0x0;
-		i2c_write_blocking(i2c0, 0x6F, &reg, 1, true);
-		uint8_t value;
-		i2c_read_blocking(i2c0, 0x6F, &value, 1, false);
-		printf("%d\n", value);
-	}
+	/* while(true) { */
+	/* 	sleep_ms(250); */
+	/* 	uint8_t reg = 0x0; */
+	/* 	i2c_write_blocking(i2c0, 0x6F, &reg, 1, true); */
+	/* 	uint8_t value; */
+	/* 	i2c_read_blocking(i2c0, 0x6F, &value, 1, false); */
+	/* 	printf("%d\n", value); */
+	/* } */
 
 	/* gpio_put(1, 1); */
 	/* cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1); */
 	/* while(true) */
 
-	// Init mag gpios
-	cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-	for(uint32_t i = 0; i < sizeof(mag_gpios) / sizeof(mag_gpios[0]); i++) {
-		gpio_init(mag_gpios[i]);
-		gpio_set_dir(i, GPIO_IN);
-		printf("Pin initialized\n");
-	}
 
-	while(true) {
-		selection = 0;
-		// Read binary selection from mag gpio
-		while (selection == 0) {
-			for(uint32_t i = 0; i < sizeof(mag_gpios) / sizeof(mag_gpios[0]); i++) {
-				selection <<= 1;
-				selection |= gpio_get(mag_gpios[i]);
-			}
-		}
-		printf("%u\n", selection);
-	}
+	// Init mag gpios
+	//cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
+	//for(uint32_t i = 0; i < sizeof(mag_gpios) / sizeof(mag_gpios[0]); i++) {
+	//	gpio_init(mag_gpios[i]);
+	//	gpio_set_dir(i, GPIO_IN);
+	//	printf("Pin initialized\n");
+	//}
+
+	/* while(true) { */
+	/* 	selection = 0; */
+	/* 	// Read binary selection from mag gpio */
+	/* 	while (selection == 0) { */
+	/* 		for(uint32_t i = 0; i < sizeof(mag_gpios) / sizeof(mag_gpios[0]); i++) { */
+	/* 			selection <<= 1; */
+	/* 			selection |= gpio_get(mag_gpios[i]); */
+	/* 		} */
+	/* 	} */
+	/* 	printf("%u\n", selection); */
+	/* } */
 
 	// Mount drive
 	printf("Mounting drive\n");
@@ -175,19 +210,28 @@ int main() {
 	printf("Chunk mark: %.4s\n", header.chunk_mark);
 	printf("Chunk size: %d\n", header.chunk_size);
 	printf("Channels: %d\n", header.channels);
+	printf("Data Size: %d\n", header.data_size);
+	printf("Data Header: %.4s\n", header.data_header);
+	printf("Sample Rate: %d\n", header.sample_rate);
 
 	if (
 		strncmp(header.riff_id, "RIFF", 4) == 0 &&
 		strncmp(header.filetype, "WAVE", 4) == 0 &&
 		header.channels == 2
 	) {
-		printf("Valid wave file\n");
+		printf("\nValid wave file\n");
 	} else {
 		printf("Not a wave file\n");
 	}
 
+	uint32_t divider = clock_get_hz(clk_sys) / (header.sample_rate * 2 * 32);
+	printf("divider: %d\n", divider);
+	pio_sm_set_clkdiv(pio, sm, divider);
+
 	uint8_t bytes_per_sample = header.bits_per_sample / 8;
-	for (uint32_t i = 0; i < header.data_size / bytes_per_sample; i++) {
+	printf("bytes_per_sample: %d\n", bytes_per_sample);
+	uint32_t total_samples = 0;
+	for (uint32_t i = 0; i < header.data_size / bytes_per_sample / 2; i++) {
 		uint32_t acc_chans = 0;
 		for (uint32_t j = 0; j < header.channels; j++) {
 			uint32_t sample;
@@ -195,7 +239,14 @@ int main() {
 			acc_chans += sample;
 		}
 		acc_chans /= header.channels;
+		/* acc_chans = acc_chans * (UINT_MAX / 1 << header.bits_per_sample); */
+		acc_chans *= 65536;
+		//acc_chans /= 4;
+		total_samples++;
+		//pio_sm_put_blocking(pio, sm, acc_chans);
+		pio_sm_put_blocking(pio, sm, acc_chans);
 	}
+	printf("%d\n", total_samples);
 
 	// Close file
 	printf("Closing file\n");
@@ -217,6 +268,6 @@ int main() {
 	printf("2");
 	sleep_ms(250);
 
-	gpio_put(1, 1);
+	//gpio_put(1, 1);
 	while(true);
 }

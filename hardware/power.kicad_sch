@@ -1639,6 +1639,12 @@
 		(uuid "029e467e-16f7-4721-a307-5fff52c3bf42")
 	)
 	(junction
+		(at 262.89 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "03e571e8-4904-4def-ab87-e4f0cc7fcdb0")
+	)
+	(junction
 		(at 96.52 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1911,6 +1917,16 @@
 	)
 	(wire
 		(pts
+			(xy 270.51 99.06) (xy 276.86 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b911d32-e1dd-4a12-9fdb-0b5e646b7405")
+	)
+	(wire
+		(pts
 			(xy 208.28 30.48) (xy 208.28 34.29)
 		)
 		(stroke
@@ -1938,6 +1954,16 @@
 			(type default)
 		)
 		(uuid "1b831825-555b-4392-b4aa-e2015bcc8e41")
+	)
+	(wire
+		(pts
+			(xy 255.27 86.36) (xy 255.27 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f172efe-81af-4a45-934a-804ba68b554c")
 	)
 	(wire
 		(pts
@@ -2038,6 +2064,16 @@
 			(type default)
 		)
 		(uuid "3b7afa13-a5d9-4e33-891c-47a8256b1340")
+	)
+	(wire
+		(pts
+			(xy 262.89 91.44) (xy 262.89 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d1fb4ff-09e9-453d-ac48-92b20ee0ab82")
 	)
 	(wire
 		(pts
@@ -2261,16 +2297,6 @@
 	)
 	(wire
 		(pts
-			(xy 254 74.93) (xy 254 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c786da5-f7ee-4876-9087-1128556340d7")
-	)
-	(wire
-		(pts
 			(xy 90.17 72.39) (xy 96.52 72.39)
 		)
 		(stroke
@@ -2338,6 +2364,16 @@
 			(type default)
 		)
 		(uuid "96bb3b3f-cef9-4687-aa61-ebb5f8b647ce")
+	)
+	(wire
+		(pts
+			(xy 254 106.68) (xy 262.89 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9970e38f-8bbd-4b4c-bf64-11b2be0a257d")
 	)
 	(wire
 		(pts
@@ -2551,7 +2587,7 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 74.93) (xy 254 74.93)
+			(xy 243.84 74.93) (xy 255.27 74.93)
 		)
 		(stroke
 			(width 0)
@@ -2608,6 +2644,16 @@
 			(type default)
 		)
 		(uuid "e6bf45b6-3753-402c-bded-491fcbcb7a20")
+	)
+	(wire
+		(pts
+			(xy 262.89 99.06) (xy 262.89 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7f5d98e-3f9d-4641-a6da-b478f79acc76")
 	)
 	(wire
 		(pts
@@ -3611,6 +3657,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 255.27 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "46c20cdc-b936-41b7-b2a2-5963d99cd839")
+		(property "Reference" "#PWR052"
+			(at 255.27 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 255.27 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 255.27 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 255.27 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 255.27 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4792dc74-368f-4931-9fb4-80327f1ee73e")
+		)
+		(instances
+			(project "boombox"
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "#PWR052")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "boombox:DMP31D1U-7")
 		(at 95.25 63.5 0)
 		(mirror x)
@@ -3761,6 +3872,97 @@
 			(project ""
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "boombox:DMN2310U-7")
+		(at 256.54 91.44 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "591acf7a-7b3c-4679-bfdf-0e1aa4fbaa73")
+		(property "Reference" "Q8"
+			(at 251.46 92.0751 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "~"
+			(at 251.46 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 255.27 105.918 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 256.54 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 256.54 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 256.54 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "ecf9e3f0-2ae2-4d4a-82ef-e31bff55a509")
+		)
+		(pin "2"
+			(uuid "1e354535-5963-4e59-96bd-7962e93e72f6")
+		)
+		(pin "1"
+			(uuid "4b7bd840-54c4-47ef-923f-131a548ed2d6")
+		)
+		(instances
+			(project "boombox"
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "Q8")
 					(unit 1)
 				)
 			)
@@ -4204,6 +4406,71 @@
 			(project "boombox"
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 276.86 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8a7bbd25-8409-4cb3-9e06-8c65ee92d06e")
+		(property "Reference" "#PWR053"
+			(at 276.86 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 276.86 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 276.86 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 276.86 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 276.86 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dfab1dbd-7c71-4254-bf9e-c7bcb8174820")
+		)
+		(instances
+			(project "boombox"
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -4891,7 +5158,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1nF"
+		(property "Value" "0.1uF"
 			(at 99.06 76.2062 0)
 			(effects
 				(font
@@ -5696,7 +5963,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "ef8a98a0-cb3f-46ae-9ce5-e0f471c4aba2")
 		(property "Reference" "D11"
@@ -5772,6 +6039,92 @@
 			(project ""
 				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
 					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 266.7 99.06 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f0c9efdf-0016-4238-8d19-2a6789922948")
+		(property "Reference" "R15"
+			(at 266.7 92.71 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1M"
+			(at 266.7 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 266.954 98.044 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 266.7 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 266.7 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 266.7 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 266.7 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "df00608d-35c0-4bd4-a539-75aac4cabdd9")
+		)
+		(pin "1"
+			(uuid "fdd57e0e-c014-4434-952e-827164882512")
+		)
+		(instances
+			(project "boombox"
+				(path "/947839cd-c3fd-4edc-874b-58f50b880ae8/aa6729ee-32f9-4f43-8219-06c1c5d6987b"
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -5887,7 +6240,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "6pF"
+		(property "Value" "0.1uF"
 			(at 201.93 82.5562 0)
 			(effects
 				(font
