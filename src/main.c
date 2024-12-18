@@ -7,7 +7,9 @@
 #include "hardware/clocks.h"
 #include "hardware/i2c.h"
 #include "hardware/pio.h"
+#include "hardware/dma.h"
 #include "audio_i2s.pio.h"
+#include <limits.h>
 
 typedef struct __attribute__((packed)) {
 	char riff_id[4];
@@ -21,7 +23,8 @@ typedef struct __attribute__((packed)) {
 	uint32_t bits_per_sec;
 	uint16_t block_align;
 	uint16_t bits_per_sample;
-	uint8_t padding[34];
+	// Not all files have this padding
+	/* uint8_t padding[34]; */
 	char data_header[4];
 	uint32_t data_size;
 } WaveHeader;
@@ -34,10 +37,6 @@ const static uint32_t I2S_DATA = 22;
 const static uint32_t AUX_EN = 28;
 
 int main() {
-	PIO pio;
-	uint sm;
-	uint offset;
-
 	FRESULT fr;
 	FATFS fs;
 	FIL file;
@@ -86,21 +85,6 @@ int main() {
 	gpio_set_dir(SPKR_EN, GPIO_OUT);
 	gpio_put(SPKR_EN, 1);
 	sleep_ms(1000);
-
-	//gpio_set_function(I2S_BCLOCK, GPIO_FUNC_PIO0);
-	//gpio_set_function(I2S_LRCLK, GPIO_FUNC_PIO0);
-	//gpio_set_function(I2S_DATA, GPIO_FUNC_PIO0);
-
-	bool init_sm = pio_claim_free_sm_and_add_program(&audio_i2s_program, &pio, &sm, &offset);
-	if (!init_sm) {
-		printf("Failed to get sm\n");
-		gpio_put(1, 1);
-		while(true);
-	}
-
-	audio_i2s_program_init(pio, sm, offset, I2S_DATA, I2S_BCLOCK);
-	pio_sm_set_enabled(pio, sm, true);
-	printf("Done\n");
 
 	// SD Card detect testing
 	/* gpio_init(26); */
@@ -171,7 +155,7 @@ int main() {
 
 	cart_path[0] = '\0';
 	// Manually specify a cartridge
-	selection = 2;
+	selection = 3;
 
 	// Open cartridge dir to find the first file
 	sprintf(cart_path, "cartridge%d/track1", selection);
@@ -224,29 +208,131 @@ int main() {
 		printf("Not a wave file\n");
 	}
 
-	uint32_t divider = clock_get_hz(clk_sys) / (header.sample_rate * 2 * 32);
-	printf("divider: %d\n", divider);
+	PIO pio;
+	uint sm;
+	uint offset;
+
+	bool init_sm = pio_claim_free_sm_and_add_program(&audio_i2s_program, &pio, &sm, &offset);
+	if (!init_sm) {
+		printf("Failed to get sm\n");
+		gpio_put(1, 1);
+		while(true);
+	}
+
+	pio_gpio_init(pio, I2S_BCLOCK);
+	pio_gpio_init(pio, I2S_LRCLK);
+	pio_gpio_init(pio, I2S_DATA);
+	audio_i2s_program_init(pio, sm, offset, I2S_DATA, I2S_BCLOCK);
+	pio_sm_set_enabled(pio, sm, true);
+	printf("Done\n");
+
+	float divider = clock_get_hz(clk_sys) / (float)(header.sample_rate * 2 * 32 * 2);
+	printf("divider: %f\n", divider);
 	pio_sm_set_clkdiv(pio, sm, divider);
 
 	uint8_t bytes_per_sample = header.bits_per_sample / 8;
 	printf("bytes_per_sample: %d\n", bytes_per_sample);
-	uint32_t total_samples = 0;
-	for (uint32_t i = 0; i < header.data_size / bytes_per_sample / 2; i++) {
-		uint32_t acc_chans = 0;
-		for (uint32_t j = 0; j < header.channels; j++) {
-			uint32_t sample;
-			ff_fread(&sample, bytes_per_sample, 1, &file);
-			acc_chans += sample;
-		}
-		acc_chans /= header.channels;
-		/* acc_chans = acc_chans * (UINT_MAX / 1 << header.bits_per_sample); */
-		acc_chans *= 65536;
-		//acc_chans /= 4;
-		total_samples++;
-		//pio_sm_put_blocking(pio, sm, acc_chans);
-		pio_sm_put_blocking(pio, sm, acc_chans);
+	/* uint32_t total_samples = 0; */
+
+	int dma_chan = dma_claim_unused_channel(false);
+	if (!dma_chan == -1) {
+		printf("Failed to get dma channel\n");
+		gpio_put(1, 1);
+		while(true);
 	}
-	printf("%d\n", total_samples);
+
+	/* int32_t test[50000]; */
+	/* for(uint32_t i = 0; i < 50000; i += 100) { */
+	/* 	for(uint32_t j = 0; j < 50; j++) { */
+	/* 		//pio_sm_put_blocking(pio, sm, INT_MAX / 32); */
+	/* 		test[i + j] = INT_MAX / 32; */
+	/* 	} */
+	/* 	for(uint32_t j = 0; j < 50; j++) { */
+	/* 		//pio_sm_put_blocking(pio, sm, -INT_MAX / 32); */
+	/* 		test[i + j + 50] = - INT_MAX / 32; */
+	/* 	} */
+	/* } */
+
+	static const uint32_t CHUNK_SIZE = 20000;
+
+	dma_channel_config c = dma_channel_get_default_config(dma_chan);
+	channel_config_set_transfer_data_size(&c, DMA_SIZE_32);
+	channel_config_set_read_increment(&c, true);
+	channel_config_set_write_increment(&c, false);
+	channel_config_set_dreq(&c, pio_get_dreq(pio, sm, true));
+	dma_channel_configure(dma_chan, &c, &pio->txf[sm], NULL, CHUNK_SIZE, false);
+
+	int32_t buf1[CHUNK_SIZE];
+	int32_t buf2[CHUNK_SIZE];
+	int32_t* cur_buf = buf1;
+	uint32_t total_samples = 0;
+	for (uint32_t i = 0; i < header.data_size / bytes_per_sample / CHUNK_SIZE; i++) {
+		int16_t samples[CHUNK_SIZE];
+		uint32_t num_read = ff_fread(samples, bytes_per_sample, CHUNK_SIZE, &file);
+		printf("%d\n", num_read);
+
+		// scale to 32 for volume control
+		// Sum channels together then convert to 2
+
+		//for (uint32_t j = 0; j < CHUNK_SIZE; j += header.channels) {
+		//	uint32_t acc_chans = 0;
+		//	for (uint32_t k = 0; k < header.channels; k++) {
+		//		acc_chans += samples[j + k];
+		//	}
+		//	acc_chans /= header.channels;
+		//	//acc_chans += samples[j];
+		//	//acc_chans /= header.channels;
+		//	acc_chans <<= 32 - header.bits_per_sample;
+		//	acc_chans |= acc_chans;
+
+		//	int32_t final = ((int32_t)acc_chans) / 128;
+		//	cur_buf[j] = final;
+		//	//printf("%d\n", cur_buf[j]);
+		//	total_samples++;
+		//}
+
+		for (uint32_t j = 0; j < CHUNK_SIZE; j++) {
+			cur_buf[j] = samples[j] * 10000;
+		}
+
+		//uint32_t start = time_us_32();
+		dma_channel_wait_for_finish_blocking(dma_chan);
+		//uint32_t end = time_us_32();
+		dma_channel_set_read_addr(dma_chan, cur_buf, true);
+		//printf("%u\n", end - start);
+
+		// Fancyify this later
+		if (cur_buf == buf1) {
+			cur_buf = buf2;
+		} else {
+			cur_buf = buf1;
+		}
+	}
+
+	printf("\ntotal: %d\n", total_samples);
+
+	/* uint16_t samples[32000]; */
+	/* ff_fread(samples, 2, 32000, &file); */
+	/* for (uint32_t i = 0; i < header.data_size / bytes_per_sample; i++) { */
+	/* for (uint32_t i = 0; i < 16000; i++) { */
+	/* 	uint32_t acc_chans = 0; */
+	/* 	for (uint32_t j = 0; j < header.channels; j++) { */
+	/* 		uint32_t sample; */
+	/* 		ff_fread(&sample, bytes_per_sample, 1, &file); */
+			/* uint32_t sample = samples[(i * 2) + j]; */
+	/* 		acc_chans += sample; */
+	/* 	} */
+	/* 	acc_chans /= header.channels; */
+	/* 	acc_chans <<= 32 - header.bits_per_sample; */
+	/* 	acc_chans |= acc_chans; */
+	/* 	//acc_chans /= 10; */
+	/* 	int32_t final = ((int32_t)acc_chans) / 32; */
+	/* 	total_samples++; */
+	/* 	pio_sm_put_blocking(pio, sm, final); */
+	/* 	pio_sm_put_blocking(pio, sm, final); */
+	/* } */
+	/* printf("%d\n", total_samples); */
+
 
 	// Close file
 	printf("Closing file\n");
