@@ -24,7 +24,7 @@ typedef struct __attribute__((packed)) {
 	uint16_t block_align;
 	uint16_t bits_per_sample;
 	// Not all files have this padding
-	/* uint8_t padding[34]; */
+	uint8_t padding[34];
 	char data_header[4];
 	uint32_t data_size;
 } WaveHeader;
@@ -53,27 +53,28 @@ int main() {
 	cyw43_arch_init();
 	stdio_init_all();
 
-	printf("\r\nPress 'enter' to start.\r\n");
-	while (true) {
-		char buf[2];
-		buf[0] = getchar();
-		if ((buf[0] == '\r') || (buf[0] == '\n')) {
-			break;
-		}
-	}
+	/* printf("\r\nPress 'enter' to start.\r\n"); */
+	/* while (true) { */
+	/* 	char buf[2]; */
+	/* 	buf[0] = getchar(); */
+	/* 	if ((buf[0] == '\r') || (buf[0] == '\n')) { */
+	/* 		break; */
+	/* 	} */
+	/* } */
+	cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
 
 	// Init power off gpio
 	gpio_init(1);
 	gpio_set_dir(1, GPIO_OUT);
 
-	for (uint32_t i = 0; i < 5; i++) {
-		printf("1");
-		cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-		sleep_ms(100);
-		printf("1");
-		cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0);
-		sleep_ms(100);
-	}
+	/* for (uint32_t i = 0; i < 5; i++) { */
+	/* 	printf("1"); */
+	/* 	cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1); */
+	/* 	sleep_ms(100); */
+	/* 	printf("1"); */
+	/* 	cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0); */
+	/* 	sleep_ms(100); */
+	/* } */
 
 	printf("Init AUX\n");
 	gpio_init(AUX_EN);
@@ -84,7 +85,6 @@ int main() {
 	gpio_init(SPKR_EN);
 	gpio_set_dir(SPKR_EN, GPIO_OUT);
 	gpio_put(SPKR_EN, 1);
-	sleep_ms(1000);
 
 	// SD Card detect testing
 	/* gpio_init(26); */
@@ -155,7 +155,7 @@ int main() {
 
 	cart_path[0] = '\0';
 	// Manually specify a cartridge
-	selection = 3;
+	selection = 2;
 
 	// Open cartridge dir to find the first file
 	sprintf(cart_path, "cartridge%d/track1", selection);
@@ -241,20 +241,7 @@ int main() {
 		while(true);
 	}
 
-	/* int32_t test[50000]; */
-	/* for(uint32_t i = 0; i < 50000; i += 100) { */
-	/* 	for(uint32_t j = 0; j < 50; j++) { */
-	/* 		//pio_sm_put_blocking(pio, sm, INT_MAX / 32); */
-	/* 		test[i + j] = INT_MAX / 32; */
-	/* 	} */
-	/* 	for(uint32_t j = 0; j < 50; j++) { */
-	/* 		//pio_sm_put_blocking(pio, sm, -INT_MAX / 32); */
-	/* 		test[i + j + 50] = - INT_MAX / 32; */
-	/* 	} */
-	/* } */
-
-	static const uint32_t CHUNK_SIZE = 20000;
-
+	static const uint32_t CHUNK_SIZE = 4096;
 	dma_channel_config c = dma_channel_get_default_config(dma_chan);
 	channel_config_set_transfer_data_size(&c, DMA_SIZE_32);
 	channel_config_set_read_increment(&c, true);
@@ -265,41 +252,41 @@ int main() {
 	int32_t buf1[CHUNK_SIZE];
 	int32_t buf2[CHUNK_SIZE];
 	int32_t* cur_buf = buf1;
-	uint32_t total_samples = 0;
 	for (uint32_t i = 0; i < header.data_size / bytes_per_sample / CHUNK_SIZE; i++) {
-		int16_t samples[CHUNK_SIZE];
-		uint32_t num_read = ff_fread(samples, bytes_per_sample, CHUNK_SIZE, &file);
-		printf("%d\n", num_read);
+		for (uint32_t j = 0; j < CHUNK_SIZE; j = j + 2) {
+			int32_t sample;
+			int32_t acc_chans = 0;
+			for (uint32_t k = 0; k < header.channels; k++) {
+				uint8_t bytes[4];
+				ff_fread(bytes, bytes_per_sample, 1, &file);
+				switch(bytes_per_sample) {
+					case 1:
+						sample = bytes[0];
+						break;
+					case 2:
+						sample = *(int16_t*)bytes;
+						break;
+					case 4:
+						sample = *(int32_t*)bytes;
+						break;
+					default:
+						gpio_put(1, 1);
+						while(true);
+						break;
+				}
+				acc_chans += sample;
+			}
+			sample = acc_chans / header.channels;
 
-		// scale to 32 for volume control
-		// Sum channels together then convert to 2
+			int8_t sign = sample < 0 ? -1 : 1;
+			sample = (abs(sample) << (32 - header.bits_per_sample)) | abs(sample);
+			sample *= sign;
 
-		//for (uint32_t j = 0; j < CHUNK_SIZE; j += header.channels) {
-		//	uint32_t acc_chans = 0;
-		//	for (uint32_t k = 0; k < header.channels; k++) {
-		//		acc_chans += samples[j + k];
-		//	}
-		//	acc_chans /= header.channels;
-		//	//acc_chans += samples[j];
-		//	//acc_chans /= header.channels;
-		//	acc_chans <<= 32 - header.bits_per_sample;
-		//	acc_chans |= acc_chans;
-
-		//	int32_t final = ((int32_t)acc_chans) / 128;
-		//	cur_buf[j] = final;
-		//	//printf("%d\n", cur_buf[j]);
-		//	total_samples++;
-		//}
-
-		for (uint32_t j = 0; j < CHUNK_SIZE; j++) {
-			cur_buf[j] = samples[j] * 10000;
+			cur_buf[j] = sample / 24;
+			cur_buf[j + 1] = sample / 24;
 		}
-
-		//uint32_t start = time_us_32();
 		dma_channel_wait_for_finish_blocking(dma_chan);
-		//uint32_t end = time_us_32();
 		dma_channel_set_read_addr(dma_chan, cur_buf, true);
-		//printf("%u\n", end - start);
 
 		// Fancyify this later
 		if (cur_buf == buf1) {
@@ -308,31 +295,12 @@ int main() {
 			cur_buf = buf1;
 		}
 	}
-
-	printf("\ntotal: %d\n", total_samples);
-
-	/* uint16_t samples[32000]; */
-	/* ff_fread(samples, 2, 32000, &file); */
-	/* for (uint32_t i = 0; i < header.data_size / bytes_per_sample; i++) { */
-	/* for (uint32_t i = 0; i < 16000; i++) { */
-	/* 	uint32_t acc_chans = 0; */
-	/* 	for (uint32_t j = 0; j < header.channels; j++) { */
-	/* 		uint32_t sample; */
-	/* 		ff_fread(&sample, bytes_per_sample, 1, &file); */
-			/* uint32_t sample = samples[(i * 2) + j]; */
-	/* 		acc_chans += sample; */
-	/* 	} */
-	/* 	acc_chans /= header.channels; */
-	/* 	acc_chans <<= 32 - header.bits_per_sample; */
-	/* 	acc_chans |= acc_chans; */
-	/* 	//acc_chans /= 10; */
-	/* 	int32_t final = ((int32_t)acc_chans) / 32; */
-	/* 	total_samples++; */
-	/* 	pio_sm_put_blocking(pio, sm, final); */
-	/* 	pio_sm_put_blocking(pio, sm, final); */
-	/* } */
-	/* printf("%d\n", total_samples); */
-
+	cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0);
+	gpio_put(1, 1);
+	while(true) {
+		printf("1");
+	};
+	dma_channel_wait_for_finish_blocking(dma_chan);
 
 	// Close file
 	printf("Closing file\n");
@@ -344,16 +312,9 @@ int main() {
 		gpio_put(1, 1);
 	}
 
-	printf("%d\n", selection);
-	sleep_ms(100);
+	/* printf("%d\n", selection); */
+	/* sleep_ms(100); */
 
-	cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-	printf("1");
-	sleep_ms(250);
-	cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0);
-	printf("2");
-	sleep_ms(250);
-
-	//gpio_put(1, 1);
+	gpio_put(1, 1);
 	while(true);
 }
