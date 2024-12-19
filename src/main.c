@@ -50,18 +50,18 @@ int main() {
 	uint32_t selection = 0;
 	uint32_t mag_gpios[] = {6, 7, 8, 9, 10};
 
-	cyw43_arch_init();
+	/* cyw43_arch_init(); */
 	stdio_init_all();
 
-	/* printf("\r\nPress 'enter' to start.\r\n"); */
-	/* while (true) { */
-	/* 	char buf[2]; */
-	/* 	buf[0] = getchar(); */
-	/* 	if ((buf[0] == '\r') || (buf[0] == '\n')) { */
-	/* 		break; */
-	/* 	} */
-	/* } */
-	cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
+	printf("\r\nPress 'enter' to start.\r\n");
+	while (true) {
+		char buf[2];
+		buf[0] = getchar();
+		if ((buf[0] == '\r') || (buf[0] == '\n')) {
+			break;
+		}
+	}
+	/* cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1); */
 
 	// Init power off gpio
 	gpio_init(1);
@@ -126,11 +126,13 @@ int main() {
 
 	// Init mag gpios
 	//cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-	//for(uint32_t i = 0; i < sizeof(mag_gpios) / sizeof(mag_gpios[0]); i++) {
-	//	gpio_init(mag_gpios[i]);
-	//	gpio_set_dir(i, GPIO_IN);
-	//	printf("Pin initialized\n");
-	//}
+	for(uint32_t i = 0; i < sizeof(mag_gpios) / sizeof(mag_gpios[0]); i++) {
+		gpio_init(mag_gpios[i]);
+		gpio_set_dir(i, GPIO_IN);
+		printf("Pin initialized\n");
+	}
+	gpio_put(1, 1);
+	while(true);
 
 	/* while(true) { */
 	/* 	selection = 0; */
@@ -149,7 +151,7 @@ int main() {
 	fr = f_mount(&fs, "0:", 1);
 	if (fr != FR_OK) {
 		printf("ERROR: Could not mount filesystem (%d)\r\n", fr);
-		cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
+		/* cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1); */
 		while (true);
 	}
 
@@ -295,7 +297,7 @@ int main() {
 			cur_buf = buf1;
 		}
 	}
-	cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0);
+	/* cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0); */
 	gpio_put(1, 1);
 	while(true) {
 		printf("1");
@@ -307,7 +309,7 @@ int main() {
 	fr = f_close(&file);
 	if (fr != FR_OK) {
 		printf("ERROR: Could not close file (%d)\r\n", fr);
-		cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
+		/* cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1); */
 		sleep_ms(3000);
 		gpio_put(1, 1);
 	}
