@@ -126,11 +126,27 @@ int main() {
 
 	// Init mag gpios
 	//cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-	for(uint32_t i = 0; i < sizeof(mag_gpios) / sizeof(mag_gpios[0]); i++) {
-		gpio_init(mag_gpios[i]);
-		gpio_set_dir(i, GPIO_IN);
-		printf("Pin initialized\n");
-	}
+	/* for(uint32_t i = 0; i < sizeof(mag_gpios) / sizeof(mag_gpios[0]); i++) { */
+	/* 	gpio_init(mag_gpios[i]); */
+	/* 	gpio_set_dir(i, GPIO_IN); */
+	/* 	printf("Pin initialized\n"); */
+	/* } */
+	/* uint32_t mag_gpios[] = {6, 7, 8, 9, 10}; */
+	gpio_init(6);
+	gpio_set_dir(6, GPIO_IN);
+
+	gpio_init(7);
+	gpio_set_dir(7, GPIO_IN);
+
+	gpio_init(8);
+	gpio_set_dir(8, GPIO_IN);
+
+	gpio_init(9);
+	gpio_set_dir(9, GPIO_IN);
+
+	gpio_init(10);
+	gpio_set_dir(10, GPIO_IN);
+
 	gpio_put(1, 1);
 	while(true);
 
