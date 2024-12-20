@@ -23,11 +23,12 @@ typedef struct __attribute__((packed)) {
 	uint32_t bits_per_sec;
 	uint16_t block_align;
 	uint16_t bits_per_sample;
-	// Not all files have this padding
-	uint8_t padding[34];
-	char data_header[4];
-	uint32_t data_size;
 } WaveHeader;
+
+typedef struct __attribute__((packed)) {
+	char chunk_id[4];
+	uint32_t chunk_size;
+} ChunkHeader;
 
 const static uint32_t SPKR_EN = 3;
 const static uint32_t I2S_BCLOCK = 20;
@@ -45,7 +46,9 @@ int main() {
 	char cart_path[12];
 	DIR cart_dir;
 	FILINFO file_info;
-	WaveHeader header;
+	WaveHeader wave_header;
+	ChunkHeader chunk_header;
+
 
 	uint32_t selection = 0;
 	uint32_t mag_gpios[] = {6, 7, 8, 9, 10};
@@ -53,15 +56,14 @@ int main() {
 	/* cyw43_arch_init(); */
 	stdio_init_all();
 
-	printf("\r\nPress 'enter' to start.\r\n");
-	while (true) {
-		char buf[2];
-		buf[0] = getchar();
-		if ((buf[0] == '\r') || (buf[0] == '\n')) {
-			break;
-		}
-	}
-	/* cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1); */
+	/* printf("\r\nPress 'enter' to start.\r\n"); */
+	/* while (true) { */
+	/* 	char buf[2]; */
+	/* 	buf[0] = getchar(); */
+	/* 	if ((buf[0] == '\r') || (buf[0] == '\n')) { */
+	/* 		break; */
+	/* 	} */
+	/* } */
 
 	// Init power off gpio
 	gpio_init(1);
@@ -126,29 +128,11 @@ int main() {
 
 	// Init mag gpios
 	//cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-	/* for(uint32_t i = 0; i < sizeof(mag_gpios) / sizeof(mag_gpios[0]); i++) { */
-	/* 	gpio_init(mag_gpios[i]); */
-	/* 	gpio_set_dir(i, GPIO_IN); */
-	/* 	printf("Pin initialized\n"); */
-	/* } */
-	/* uint32_t mag_gpios[] = {6, 7, 8, 9, 10}; */
-	gpio_init(6);
-	gpio_set_dir(6, GPIO_IN);
-
-	gpio_init(7);
-	gpio_set_dir(7, GPIO_IN);
-
-	gpio_init(8);
-	gpio_set_dir(8, GPIO_IN);
-
-	gpio_init(9);
-	gpio_set_dir(9, GPIO_IN);
-
-	gpio_init(10);
-	gpio_set_dir(10, GPIO_IN);
-
-	gpio_put(1, 1);
-	while(true);
+	for(uint32_t i = 0; i < sizeof(mag_gpios) / sizeof(mag_gpios[0]); i++) {
+		gpio_init(mag_gpios[i]);
+		gpio_set_dir(mag_gpios[i], GPIO_IN);
+		printf("Pin initialized\n");
+	}
 
 	/* while(true) { */
 	/* 	selection = 0; */
@@ -173,7 +157,7 @@ int main() {
 
 	cart_path[0] = '\0';
 	// Manually specify a cartridge
-	selection = 2;
+	selection = 3;
 
 	// Open cartridge dir to find the first file
 	sprintf(cart_path, "cartridge%d/track1", selection);
@@ -201,30 +185,33 @@ int main() {
 
 	// Print every line in file over serial
 	printf("Reading from file '%s':\r\n", full_path);
-	printf("---\r\n");
-	uint32_t res;
-	ff_fread(&header, sizeof(WaveHeader), 1, &file);
-	printf("%d\n", res);
+	ff_fread(&wave_header, sizeof(WaveHeader), 1, &file);
 
-	printf("RIFF ID: %.4s\n", header.riff_id);
-	printf("File size: %d\n", header.filesize);
-	printf("File type: %.4s\n", header.filetype);
-	printf("Chunk mark: %.4s\n", header.chunk_mark);
-	printf("Chunk size: %d\n", header.chunk_size);
-	printf("Channels: %d\n", header.channels);
-	printf("Data Size: %d\n", header.data_size);
-	printf("Data Header: %.4s\n", header.data_header);
-	printf("Sample Rate: %d\n", header.sample_rate);
+	printf("RIFF ID: %.4s\n", wave_header.riff_id);
+	printf("File size: %d\n", wave_header.filesize);
+	printf("File type: %.4s\n", wave_header.filetype);
+	printf("Chunk mark: %.4s\n", wave_header.chunk_mark);
+	printf("Chunk size: %d\n", wave_header.chunk_size);
+	printf("Channels: %d\n", wave_header.channels);
+	printf("Sample Rate: %d\n", wave_header.sample_rate);
 
 	if (
-		strncmp(header.riff_id, "RIFF", 4) == 0 &&
-		strncmp(header.filetype, "WAVE", 4) == 0 &&
-		header.channels == 2
+		!strncmp(wave_header.riff_id, "RIFF", 4) == 0 &&
+		!strncmp(wave_header.filetype, "WAVE", 4) == 0
 	) {
-		printf("\nValid wave file\n");
-	} else {
 		printf("Not a wave file\n");
+		gpio_put(1, 1);
+		while(true);
 	}
+
+	while (ff_fread(&chunk_header, sizeof(ChunkHeader), 1, &file) == 1) {
+		if (strncmp(chunk_header.chunk_id, "data", 4) == 0) {
+			printf("Found data chunk. Size: %u bytes\n", chunk_header.chunk_size);
+		}
+		break;
+		ff_fseek(&file, chunk_header.chunk_size, SEEK_CUR);
+	}
+	printf("Exited header loop");
 
 	PIO pio;
 	uint sm;
@@ -237,6 +224,7 @@ int main() {
 		while(true);
 	}
 
+	// Test clock
 	pio_gpio_init(pio, I2S_BCLOCK);
 	pio_gpio_init(pio, I2S_LRCLK);
 	pio_gpio_init(pio, I2S_DATA);
@@ -244,13 +232,12 @@ int main() {
 	pio_sm_set_enabled(pio, sm, true);
 	printf("Done\n");
 
-	float divider = clock_get_hz(clk_sys) / (float)(header.sample_rate * 2 * 32 * 2);
+	float divider = clock_get_hz(clk_sys) / (float)(wave_header.sample_rate * 2 * 32 * 2);
 	printf("divider: %f\n", divider);
 	pio_sm_set_clkdiv(pio, sm, divider);
 
-	uint8_t bytes_per_sample = header.bits_per_sample / 8;
+	uint8_t bytes_per_sample = wave_header.bits_per_sample / 8;
 	printf("bytes_per_sample: %d\n", bytes_per_sample);
-	/* uint32_t total_samples = 0; */
 
 	int dma_chan = dma_claim_unused_channel(false);
 	if (!dma_chan == -1) {
@@ -270,11 +257,11 @@ int main() {
 	int32_t buf1[CHUNK_SIZE];
 	int32_t buf2[CHUNK_SIZE];
 	int32_t* cur_buf = buf1;
-	for (uint32_t i = 0; i < header.data_size / bytes_per_sample / CHUNK_SIZE; i++) {
+	for (uint32_t i = 0; i < chunk_header.chunk_size / bytes_per_sample / CHUNK_SIZE; i++) {
 		for (uint32_t j = 0; j < CHUNK_SIZE; j = j + 2) {
 			int32_t sample;
 			int32_t acc_chans = 0;
-			for (uint32_t k = 0; k < header.channels; k++) {
+			for (uint32_t k = 0; k < wave_header.channels; k++) {
 				uint8_t bytes[4];
 				ff_fread(bytes, bytes_per_sample, 1, &file);
 				switch(bytes_per_sample) {
@@ -294,10 +281,10 @@ int main() {
 				}
 				acc_chans += sample;
 			}
-			sample = acc_chans / header.channels;
+			sample = acc_chans / wave_header.channels;
 
 			int8_t sign = sample < 0 ? -1 : 1;
-			sample = (abs(sample) << (32 - header.bits_per_sample)) | abs(sample);
+			sample = (abs(sample) << (32 - wave_header.bits_per_sample)) | abs(sample);
 			sample *= sign;
 
 			cur_buf[j] = sample / 24;
